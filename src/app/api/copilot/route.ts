@@ -136,7 +136,7 @@ export async function POST(req: NextRequest) {
     });
   }
 
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY?.trim();
   if (!apiKey || apiKey === "your_gemini_api_key_here") {
     // Return fallback in dev/demo mode
     const fallback = findFallback(query);
@@ -150,7 +150,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 5000);
+    const timer = setTimeout(() => controller.abort(), 10000);
 
     const geminiRes = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
@@ -179,7 +179,8 @@ export async function POST(req: NextRequest) {
     clearTimeout(timer);
 
     if (!geminiRes.ok) {
-      throw new Error(`Gemini ${geminiRes.status}`);
+      const errBody = await geminiRes.text().catch(() => "");
+      throw new Error(`Gemini ${geminiRes.status}: ${errBody.slice(0, 200)}`);
     }
 
     const data = await geminiRes.json();
@@ -189,13 +190,24 @@ export async function POST(req: NextRequest) {
     if (!answer) throw new Error("Empty Gemini response");
 
     return NextResponse.json({ answer, source: "gemini" });
-  } catch {
-    // Timeout or API error: try keyword fallback
+  } catch (err) {
+    // Timeout or API error: try keyword fallback first
     const fallback = findFallback(query);
+    if (fallback) {
+      return NextResponse.json({ answer: fallback, source: "fallback" });
+    }
+
+    // Detect invalid key (Gemini returns 400 with API_KEY_INVALID)
+    const errMsg = err instanceof Error ? err.message : "";
+    const isKeyError =
+      errMsg.includes("400") ||
+      errMsg.includes("403") ||
+      errMsg.includes("API_KEY");
+
     return NextResponse.json({
-      answer:
-        fallback ??
-        "Сервіс тимчасово недоступний. Зверніться до supervisor або перевірте внутрішню базу знань Nova Post.",
+      answer: isKeyError
+        ? "Перевірте API ключ у Vercel Environment Variables: він може бути невалідним або мати зайвий пробіл."
+        : "Gemini API недоступний (timeout або мережа). Спробуйте ще раз або запитайте про літієві батареї, алкоголь, терміни доставки — ці теми доступні офлайн.",
       source: "fallback",
     });
   }
