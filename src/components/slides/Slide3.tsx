@@ -118,7 +118,7 @@ export function Slide3() {
         {/* Proof block — InPost з bar chart */}
         <div className="bg-ink text-paper rounded-2xl p-8 md:p-12 grid md:grid-cols-[1.5fr_1fr] gap-8 md:gap-12 items-center relative overflow-hidden">
           {/* Decorative gradient corner */}
-          <div className="absolute -top-20 -right-20 w-[300px] h-[300px] rounded-full opacity-20 blur-3xl bg-pop pointer-events-none" />
+          <div className="deco-blob absolute -top-20 -right-20 w-[300px] h-[300px] rounded-full opacity-15 blur-2xl bg-pop" />
 
           <div className="relative z-10">
             <div className="flex items-baseline gap-3 mb-4">

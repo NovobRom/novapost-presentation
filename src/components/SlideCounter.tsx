@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLang } from "@/lib/lang-context";
 import { ui } from "@/content/slides";
 
@@ -9,20 +9,26 @@ const TOTAL_SLIDES = 12;
 export function SlideCounter() {
   const { lang } = useLang();
   const [current, setCurrent] = useState(1);
+  const lastUpdate = useRef(0);
 
   useEffect(() => {
     const slides = document.querySelectorAll(".slide");
 
     const observer = new IntersectionObserver(
       (entries) => {
+        const now = Date.now();
+        if (now - lastUpdate.current < 100) return;
         entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
             const idx = Array.from(slides).indexOf(entry.target as Element);
-            if (idx !== -1) setCurrent(idx + 1);
+            if (idx !== -1) {
+              lastUpdate.current = now;
+              setCurrent(idx + 1);
+            }
           }
         });
       },
-      { threshold: [0.5] }
+      { threshold: [0.6] }
     );
 
     slides.forEach((s) => observer.observe(s));

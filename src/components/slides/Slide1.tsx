@@ -12,10 +12,10 @@ export function Slide1() {
   return (
     <section id="slide-1" className="slide bg-paper noise-overlay relative">
       {/* Декоративний gradient mesh кружок зверху-справа */}
-      <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full opacity-30 blur-3xl gradient-mesh pointer-events-none" />
+      <div className="deco-blob absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full opacity-25 blur-2xl gradient-mesh" />
 
       {/* Маленький електричний акцент знизу-зліва */}
-      <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full opacity-20 blur-3xl bg-electric pointer-events-none" />
+      <div className="deco-blob absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full opacity-15 blur-2xl bg-electric" />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Eyebrow */}

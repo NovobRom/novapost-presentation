@@ -11,7 +11,7 @@ export function Slide2() {
   return (
     <section id="slide-2" className="slide bg-ink text-paper noise-overlay relative">
       {/* Subtle radial glow зверху */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full opacity-30 blur-3xl bg-pop pointer-events-none" />
+      <div className="deco-blob absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full opacity-20 blur-2xl bg-pop" />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Eyebrow */}

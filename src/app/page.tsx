@@ -1,6 +1,8 @@
 import { Slide1 } from "@/components/slides/Slide1";
 import { Slide2 } from "@/components/slides/Slide2";
 import { Slide3 } from "@/components/slides/Slide3";
+import { Slide4 } from "@/components/slides/Slide4";
+import { Slide5 } from "@/components/slides/Slide5";
 import { SlidePlaceholder } from "@/components/slides/SlidePlaceholder";
 
 export default function Home() {
@@ -9,16 +11,8 @@ export default function Home() {
       <Slide1 />
       <Slide2 />
       <Slide3 />
-      <SlidePlaceholder
-        number={4}
-        titleUa="Бачення Nova Post 2030"
-        titleEn="Nova Post Vision 2030"
-      />
-      <SlidePlaceholder
-        number={5}
-        titleUa="Три горизонти трансформації"
-        titleEn="Three Horizons of Transformation"
-      />
+      <Slide4 />
+      <Slide5 />
       <SlidePlaceholder
         number={6}
         titleUa="AI-Copilot оператора (живий демо)"

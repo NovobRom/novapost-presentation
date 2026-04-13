@@ -66,6 +66,138 @@ export const slide2 = {
   },
 };
 
+// СЛАЙД 4: БАЧЕННЯ NOVA POST 2030
+export const slide4 = {
+  ua: {
+    eyebrow: "Бачення 2030",
+    title: "Nova Post Europe: логістика як невидимий сервіс",
+    subtitle: "Компанія, де AI прибирає тертя між відправником і отримувачем.",
+    blocks: [
+      {
+        id: "client",
+        label: "Клієнт",
+        title: "Проактивний сервіс",
+        body: "AI передбачає проблему до того, як клієнт її відчуває. Персоналізована швидкість, ціна, спосіб доставки. Логістика стає невидимою.",
+      },
+      {
+        id: "operator",
+        label: "Оператор",
+        title: "AI-Copilot на кожному робочому місці",
+        body: "Правила всіх країн, тарифи, мови. Copilot знає все. Оператор займається клієнтом, не пошуком інформації.",
+      },
+      {
+        id: "manager",
+        label: "Менеджер",
+        title: "AI-агенти як команда",
+        body: "Рутинні процеси: звіти, прогнози, комунікація — виконують AI-агенти. Менеджер фокусується на рішеннях, які вимагають людини.",
+      },
+      {
+        id: "expansion",
+        label: "Експансія",
+        title: "Нова країна за тижні",
+        body: "Автономний депо-формат з вбудованим AI: операційні правила, навчання, комплаєнс налаштовуються автоматично при запуску.",
+      },
+    ],
+  },
+  en: {
+    eyebrow: "Vision 2030",
+    title: "Nova Post Europe: logistics as invisible service",
+    subtitle: "A company where AI removes friction between sender and recipient.",
+    blocks: [
+      {
+        id: "client",
+        label: "Customer",
+        title: "Proactive service",
+        body: "AI anticipates the problem before the customer feels it. Personalized speed, price, and delivery method. Logistics becomes invisible.",
+      },
+      {
+        id: "operator",
+        label: "Operator",
+        title: "AI-Copilot at every workstation",
+        body: "Rules for all countries, tariffs, languages. Copilot knows everything. The operator focuses on the customer, not searching for information.",
+      },
+      {
+        id: "manager",
+        label: "Manager",
+        title: "AI agents as a team",
+        body: "Routine processes: reports, forecasts, communications are handled by AI agents. The manager focuses on decisions that require a human.",
+      },
+      {
+        id: "expansion",
+        label: "Expansion",
+        title: "New country in weeks",
+        body: "Autonomous depot format with built-in AI: operational rules, training, and compliance are configured automatically at launch.",
+      },
+    ],
+  },
+};
+
+// СЛАЙД 5: ТРИ ГОРИЗОНТИ ТРАНСФОРМАЦІЇ
+export const slide5 = {
+  ua: {
+    eyebrow: "Стратегія",
+    title: "Три горизонти трансформації",
+    subtitle: "Кожен горизонт має вимірюваний результат. Немає абстрактних цілей.",
+    horizons: [
+      {
+        label: "H1",
+        period: "0-12 місяців",
+        title: "AI-Copilot на кожному робочому місці",
+        body: "No-Code автоматизація: Make, n8n, Zapier. Оператори і менеджери самі автоматизують свою рутину — без черги до IT. Перший потік AI-champions.",
+        metric: "100% бек-офісу охоплено AI-Copilot",
+        highlight: "Make, n8n, Zapier",
+      },
+      {
+        label: "H2",
+        period: "12-24 місяці",
+        title: "AI-агенти як співробітники",
+        body: "Plug-and-Play через MCP (Model Context Protocol). AI-агенти підключаються до систем Nova Post, виконують завдання автономно. Human-in-the-loop для критичних рішень.",
+        metric: "5+ автономних AI-агентів в операційному контурі",
+        highlight: "MCP",
+      },
+      {
+        label: "H3",
+        period: "24-36 місяців",
+        title: "Автономні відділення нових форматів",
+        body: "Пілотний запуск в новій країні через автономний депо-формат. Операційні правила, навчання, комплаєнс — AI налаштовує при старті. Масштабування без лінійного зростання штату.",
+        metric: "Нова країна за 4 тижні замість 6 місяців",
+        highlight: null,
+      },
+    ],
+  },
+  en: {
+    eyebrow: "Strategy",
+    title: "Three Horizons of Transformation",
+    subtitle: "Each horizon has a measurable outcome. No abstract goals.",
+    horizons: [
+      {
+        label: "H1",
+        period: "0-12 months",
+        title: "AI-Copilot at every workstation",
+        body: "No-Code automation: Make, n8n, Zapier. Operators and managers automate their own routine without waiting for IT. First wave of AI champions.",
+        metric: "100% of back-office covered by AI-Copilot",
+        highlight: "Make, n8n, Zapier",
+      },
+      {
+        label: "H2",
+        period: "12-24 months",
+        title: "AI agents as employees",
+        body: "Plug-and-Play via MCP (Model Context Protocol). AI agents connect to Nova Post systems and execute tasks autonomously. Human-in-the-loop for critical decisions.",
+        metric: "5+ autonomous AI agents in the operational loop",
+        highlight: "MCP",
+      },
+      {
+        label: "H3",
+        period: "24-36 months",
+        title: "Autonomous branches of new formats",
+        body: "Pilot launch in a new country via autonomous depot format. Operational rules, training, compliance — AI configures at startup. Scaling without linear headcount growth.",
+        metric: "New country in 4 weeks instead of 6 months",
+        highlight: null,
+      },
+    ],
+  },
+};
+
 // СЛАЙД 3: ЩО ВІДРІЗНЯЄ ПЕРЕМОЖЦІВ
 export const slide3 = {
   ua: {
