@@ -140,6 +140,8 @@ export async function POST(req: NextRequest) {
   }
 
   const apiKey = process.env.GEMINI_API_KEY?.trim();
+  const model = process.env.GEMINI_MODEL?.trim() || "gemini-1.5-flash";
+
   if (!apiKey || apiKey === "your_gemini_api_key_here") {
     // Return fallback in dev/demo mode
     const fallback = findFallback(query);
@@ -156,7 +158,7 @@ export async function POST(req: NextRequest) {
     const timer = setTimeout(() => controller.abort(), 8000);
 
     const geminiRes = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -221,6 +223,7 @@ export async function POST(req: NextRequest) {
 // -----------------------------------------------------------------------
 export async function GET() {
   const apiKey = process.env.GEMINI_API_KEY?.trim();
+  const model = process.env.GEMINI_MODEL?.trim() || "gemini-1.5-flash";
 
   if (!apiKey || apiKey === "your_gemini_api_key_here") {
     return NextResponse.json({ status: "no_key", message: "GEMINI_API_KEY не встановлено" });
@@ -231,7 +234,7 @@ export async function GET() {
     const timer = setTimeout(() => controller.abort(), 8000);
 
     const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -249,7 +252,7 @@ export async function GET() {
       return NextResponse.json({ status: "key_error", httpStatus: res.status, detail: body.slice(0, 300) });
     }
 
-    return NextResponse.json({ status: "ok", model: "gemini-1.5-flash", message: "Ключ валідний, API відповідає" });
+    return NextResponse.json({ status: "ok", model, message: "Ключ валідний, API відповідає" });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     return NextResponse.json({ status: "timeout_or_network", error: msg });
