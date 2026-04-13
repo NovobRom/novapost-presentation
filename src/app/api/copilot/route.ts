@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
+// Edge runtime: no cold start, 30s timeout on Vercel Hobby (vs 10s serverless)
+export const runtime = "edge";
+
 // -----------------------------------------------------------------------
 // System prompt: жорсткий фокус тільки на logistics/customs/tariffs
 // -----------------------------------------------------------------------
@@ -150,7 +153,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 10000);
+    const timer = setTimeout(() => controller.abort(), 8000);
 
     const geminiRes = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
