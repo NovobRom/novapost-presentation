@@ -198,6 +198,60 @@ export const slide5 = {
   },
 };
 
+// СЛАЙД 6: ЖИВИЙ DEMO AI-COPILOT
+export const slide6 = {
+  ua: {
+    eyebrow: "Живий демо",
+    title: "AI-Copilot оператора",
+    description:
+      "Оператор запитав. AI відповів. Жодного пошуку по папках, жодного дзвінка супервайзору. Правила 47 країн у відповіді за секунди.",
+    badge: "Це не презентація. Це продукт.",
+    badgeSub: "Працює прямо зараз через Gemini 2.0 Flash API",
+    inputPlaceholder: "Запитайте про правила відправлення...",
+    sendLabel: "Відправити",
+    poweredBy: "Gemini 2.0 Flash",
+    sourceLabel: {
+      gemini: "Відповідь від Gemini API",
+      fallback: "Приклад відповіді (offline-режим)",
+      system: "Системний захист",
+    },
+    suggestions: [
+      "Чи можна відправити літієву батарею в Латвію?",
+      "Які документи потрібні для посилки з України до Литви?",
+      "Скільки часу займає доставка Вільнюс — Київ?",
+      "Чи можна відправити алкоголь в Естонію?",
+    ],
+    notebookLink: "Внутрішня база знань (NotebookLM)",
+    rateError: "Забагато запитів. Зачекайте хвилину.",
+    loadingText: "Copilot думає...",
+  },
+  en: {
+    eyebrow: "Live demo",
+    title: "Operator AI-Copilot",
+    description:
+      "The operator asked. The AI answered. No folder search, no call to a supervisor. Rules for 47 countries delivered in seconds.",
+    badge: "This is not a presentation. This is a product.",
+    badgeSub: "Running right now via Gemini 2.0 Flash API",
+    inputPlaceholder: "Ask about shipping rules...",
+    sendLabel: "Send",
+    poweredBy: "Gemini 2.0 Flash",
+    sourceLabel: {
+      gemini: "Answer from Gemini API",
+      fallback: "Example response (offline mode)",
+      system: "System protection",
+    },
+    suggestions: [
+      "Can I ship a lithium battery to Latvia?",
+      "What documents are required for a parcel from Ukraine to Lithuania?",
+      "How long does delivery take from Vilnius to Kyiv?",
+      "Can I send alcohol to Estonia?",
+    ],
+    notebookLink: "Internal Knowledge Base (NotebookLM)",
+    rateError: "Too many requests. Wait a minute.",
+    loadingText: "Copilot is thinking...",
+  },
+};
+
 // СЛАЙД 3: ЩО ВІДРІЗНЯЄ ПЕРЕМОЖЦІВ
 export const slide3 = {
   ua: {
