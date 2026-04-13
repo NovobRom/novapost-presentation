@@ -156,7 +156,7 @@ export async function POST(req: NextRequest) {
     const timer = setTimeout(() => controller.abort(), 8000);
 
     const geminiRes = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -213,5 +213,45 @@ export async function POST(req: NextRequest) {
         : "Gemini API недоступний (timeout або мережа). Спробуйте ще раз або запитайте про літієві батареї, алкоголь, терміни доставки — ці теми доступні офлайн.",
       source: "fallback",
     });
+  }
+}
+
+// -----------------------------------------------------------------------
+// GET /api/copilot — тест ключа в браузері (відкрий URL напряму)
+// -----------------------------------------------------------------------
+export async function GET() {
+  const apiKey = process.env.GEMINI_API_KEY?.trim();
+
+  if (!apiKey || apiKey === "your_gemini_api_key_here") {
+    return NextResponse.json({ status: "no_key", message: "GEMINI_API_KEY не встановлено" });
+  }
+
+  try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 8000);
+
+    const res = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        signal: controller.signal,
+        body: JSON.stringify({
+          contents: [{ role: "user", parts: [{ text: "Say OK" }] }],
+          generationConfig: { maxOutputTokens: 5 },
+        }),
+      }
+    );
+    clearTimeout(timer);
+
+    if (!res.ok) {
+      const body = await res.text().catch(() => "");
+      return NextResponse.json({ status: "key_error", httpStatus: res.status, detail: body.slice(0, 300) });
+    }
+
+    return NextResponse.json({ status: "ok", model: "gemini-1.5-flash", message: "Ключ валідний, API відповідає" });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    return NextResponse.json({ status: "timeout_or_network", error: msg });
   }
 }
