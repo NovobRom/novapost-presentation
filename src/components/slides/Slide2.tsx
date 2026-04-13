@@ -2,74 +2,106 @@
 
 import { useLang } from "@/lib/lang-context";
 import { slide2 } from "@/content/slides";
+import { AnimatedNumber } from "@/components/AnimatedNumber";
 
 export function Slide2() {
   const { lang } = useLang();
   const s = slide2[lang];
 
   return (
-    <section id="slide-2" className="slide bg-ink text-paper">
-      <div className="max-w-6xl mx-auto w-full">
+    <section id="slide-2" className="slide bg-ink text-paper noise-overlay relative">
+      {/* Subtle radial glow зверху */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full opacity-30 blur-3xl bg-pop pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Eyebrow */}
         <div className="mb-12 flex items-center gap-3">
-          <span className="w-12 h-px bg-np-red" />
-          <span className="text-xs uppercase tracking-[0.2em] text-paper/60 font-medium">
+          <span className="w-12 h-px bg-pop" />
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-paper/60">
             {s.eyebrow}
           </span>
         </div>
 
         {/* Title */}
-        <h2 className="font-display font-bold text-display-lg mb-16 max-w-4xl">
-          {s.title}
+        <h2 className="font-display text-display-xl mb-20 max-w-5xl">
+          AI{" "}
+          <em className="serif-italic text-paper/70">всюди.</em>
+          <br />
+          <span className="text-pop">Цінність</span>{" "}
+          <em className="serif-italic">— рідко.</em>
         </h2>
 
-        {/* Two main contrasting stats */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="border border-paper/20 p-8 rounded-lg">
-            <div className="text-7xl md:text-8xl font-display font-bold text-paper/60 mb-3">
-              {s.leadStat.value}
+        {/* Hero contrast — 88% vs 5%, split-screen */}
+        <div className="grid md:grid-cols-2 gap-1 mb-16 border border-paper/15 rounded-xl overflow-hidden">
+          {/* Left: 88% — dimmed */}
+          <div className="p-8 md:p-12 bg-paper/5 relative diagonal-stripes">
+            <div className="font-mono text-[10px] uppercase tracking-widest text-paper/40 mb-4">
+              {lang === "ua" ? "Поверхневе впровадження" : "Surface adoption"}
             </div>
-            <p className="text-paper/80 text-base leading-snug">
+            <div className="font-display text-[8rem] md:text-[12rem] leading-none text-paper/60 mb-3">
+              <AnimatedNumber value={88} suffix="%" duration={1800} />
+            </div>
+            <p className="text-paper/70 text-sm md:text-base leading-snug max-w-xs">
               {s.leadStat.label}
             </p>
           </div>
 
-          <div className="border border-np-red p-8 rounded-lg bg-np-red/5">
-            <div className="text-7xl md:text-8xl font-display font-bold text-np-red mb-3">
-              {s.contrastStat.value}
+          {/* Right: 5% — bright pop */}
+          <div className="p-8 md:p-12 bg-pop/10 relative">
+            <div className="font-mono text-[10px] uppercase tracking-widest text-pop mb-4">
+              {lang === "ua" ? "Реальна цінність" : "Real value"}
             </div>
-            <p className="text-paper text-base leading-snug">
+            <div className="font-display text-[8rem] md:text-[12rem] leading-none text-pop glow-pop mb-3">
+              <AnimatedNumber value={5} suffix="%" duration={2200} />
+            </div>
+            <p className="text-paper text-sm md:text-base leading-snug max-w-xs">
               {s.contrastStat.label}
             </p>
           </div>
         </div>
 
         {/* Two supporting stats */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="flex items-baseline gap-4">
-            <span className="text-3xl font-display font-bold text-paper/80">
-              {s.failureStat.value}
-            </span>
-            <p className="text-paper/70 text-sm leading-snug">
+        <div className="grid md:grid-cols-2 gap-12 mb-16">
+          <div className="border-l-2 border-paper/30 pl-6">
+            <div className="font-display text-5xl md:text-6xl text-paper/90 mb-2">
+              <AnimatedNumber value={88} suffix="%" duration={1600} />
+            </div>
+            <p className="text-paper/60 text-sm leading-snug">
               {s.failureStat.label}
             </p>
           </div>
-          <div className="flex items-baseline gap-4">
-            <span className="text-3xl font-display font-bold text-paper/80">
-              {s.redesignStat.value}
-            </span>
-            <p className="text-paper/70 text-sm leading-snug">
+          <div className="border-l-2 border-paper/30 pl-6">
+            <div className="font-display text-5xl md:text-6xl text-paper/90 mb-2">
+              <AnimatedNumber value={21} suffix="%" duration={1600} />
+            </div>
+            <p className="text-paper/60 text-sm leading-snug">
               {s.redesignStat.label}
             </p>
           </div>
         </div>
 
         {/* Conclusion */}
-        <div className="border-t border-paper/20 pt-8">
-          <p className="text-2xl md:text-3xl font-display font-light text-paper">
-            {s.conclusion}
+        <div className="border-t border-paper/20 pt-10">
+          <p className="font-display text-3xl md:text-5xl text-paper leading-tight">
+            {lang === "ua" ? (
+              <>
+                Проблема не в технологіях.
+                <br />
+                <em className="serif-italic text-pop">Проблема в підході.</em>
+              </>
+            ) : (
+              <>
+                The problem isn't technology.
+                <br />
+                <em className="serif-italic text-pop">The problem is approach.</em>
+              </>
+            )}
           </p>
         </div>
+      </div>
+
+      <div className="absolute bottom-6 left-6 font-mono text-[10px] text-paper/40 uppercase tracking-widest">
+        № 02 / 12
       </div>
     </section>
   );

@@ -2,34 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
-
-:root {
-  --color-bg: #FAFAFA;
-  --color-ink: #0A0A0A;
-}
-
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 html, body {
-  background: var(--color-bg);
-  color: var(--color-ink);
-  font-family: 'Inter', system-ui, sans-serif;
+  background: #F5F2EC;
+  color: #0A0A0A;
 }
 
-/* Smooth scroll between slides */
 html {
   scroll-behavior: smooth;
 }
 
-/* Hide scrollbar but keep functionality */
+/* Hide scrollbar */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Slide container — full viewport, snap scrolling */
+/* Slide container */
 .slide {
   min-height: 100vh;
   width: 100%;
@@ -37,8 +28,9 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem 2rem;
+  padding: 4rem 1.5rem;
   position: relative;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
@@ -46,7 +38,7 @@ html {
 }
 
 @media (min-width: 1280px) {
-  .slide { padding: 8rem 8rem; }
+  .slide { padding: 8rem 6rem; }
 }
 
 .slides-container {
@@ -55,10 +47,87 @@ html {
   height: 100vh;
 }
 
-/* Subtle grid background for accent */
-.grid-bg {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.025) 1px, transparent 1px);
-  background-size: 48px 48px;
+/* Editorial italic flourish for serif display */
+.serif-italic {
+  font-family: var(--font-instrument), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
 }
+
+/* Animated gradient mesh — для титульного слайду */
+.gradient-mesh {
+  background: linear-gradient(
+    115deg,
+    #ED1C24 0%,
+    #FF3366 25%,
+    #B91219 50%,
+    #FF3366 75%,
+    #ED1C24 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 18s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Noise overlay — для editorial відчуття */
+.noise-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.08;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* Subtle dot grid background */
+.dot-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(10, 10, 10, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Diagonal stripes — для accent areas */
+.diagonal-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 12px,
+    rgba(0, 0, 0, 0.04) 12px,
+    rgba(0, 0, 0, 0.04) 13px
+  );
+}
+
+/* Glow text effect для критичних чисел */
+.glow-pop {
+  text-shadow: 0 0 60px rgba(255, 51, 102, 0.4);
+}
+
+.glow-red {
+  text-shadow: 0 0 60px rgba(237, 28, 36, 0.4);
+}
+
+/* Number ticker — для анімованих чисел */
+@keyframes count-fade-in {
+  0% { opacity: 0; transform: translateY(40px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.number-reveal {
+  animation: count-fade-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger reveals */
+@keyframes stagger-up {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.stagger-1 { animation: stagger-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards; opacity: 0; }
+.stagger-2 { animation: stagger-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards; opacity: 0; }
+.stagger-3 { animation: stagger-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards; opacity: 0; }
+.stagger-4 { animation: stagger-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards; opacity: 0; }
+.stagger-5 { animation: stagger-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards; opacity: 0; }
