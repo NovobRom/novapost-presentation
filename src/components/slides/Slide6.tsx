@@ -42,21 +42,29 @@ export function Slide6() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Sync seed when lang changes
+  // Sync seed when lang changes (only if chat is in initial state)
   useEffect(() => {
-    setMessages(lang === "ua" ? SEED_UA : SEED_EN);
+    setMessages((prev) => {
+      const isInitial =
+        prev.length === SEED_UA.length &&
+        (prev[0]?.text === SEED_UA[0].text || prev[0]?.text === SEED_EN[0].text);
+      return isInitial ? (lang === "ua" ? SEED_UA : SEED_EN) : prev;
+    });
   }, [lang]);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    const container = messagesEndRef.current?.parentElement;
+    if (container) {
+      container.scrollTop = container.scrollHeight;
+    }
   }, [messages, loading]);
 
   async function send(query: string) {
     if (!query.trim() || loading) return;
+    setLoading(true);
     const userMsg: Message = { role: "user", text: query.trim() };
     setMessages((prev) => [...prev, userMsg]);
     setInput("");
-    setLoading(true);
 
     try {
       const res = await fetch("/api/copilot", {
@@ -264,6 +272,9 @@ export function Slide6() {
           </div>
 
           {/* Suggested questions */}
+          <div className="font-mono text-[10px] uppercase tracking-widest text-paper/40 mb-1">
+            {s.suggestionsLabel}
+          </div>
           <div className="flex flex-wrap gap-2">
             {s.suggestions.map((q, i) => (
               <button

@@ -17,7 +17,7 @@ export function SlideCounter() {
     const observer = new IntersectionObserver(
       (entries) => {
         const now = Date.now();
-        if (now - lastUpdate.current < 100) return;
+        if (now - lastUpdate.current < 200) return;
         entries.forEach((entry) => {
           if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
             const idx = Array.from(slides).indexOf(entry.target as Element);
