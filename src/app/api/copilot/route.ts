@@ -153,9 +153,23 @@ export async function POST(req: NextRequest) {
     });
   }
 
+  // Файли бази знань (завантажені через scripts/upload-kb.mjs)
+  const fileUris = (process.env.GEMINI_FILE_URIS ?? "")
+    .split(",")
+    .map((u) => u.trim())
+    .filter(Boolean);
+
   try {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 8000);
+
+    // Якщо є файли бази знань - підключаємо їх до запиту
+    const userParts: { text?: string; fileData?: { mimeType: string; fileUri: string } }[] = [
+      ...fileUris.map((uri) => ({
+        fileData: { mimeType: "application/pdf", fileUri: uri },
+      })),
+      { text: query },
+    ];
 
     const geminiRes = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
@@ -165,7 +179,7 @@ export async function POST(req: NextRequest) {
         signal: controller.signal,
         body: JSON.stringify({
           systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
-          contents: [{ role: "user", parts: [{ text: query }] }],
+          contents: [{ role: "user", parts: userParts }],
           generationConfig: {
             temperature: 0.15,
             maxOutputTokens: 400,
