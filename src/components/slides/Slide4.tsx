@@ -66,17 +66,8 @@ export function Slide4() {
 
         {/* Title */}
         <h2 className="font-display text-display-lg mb-4 max-w-5xl stagger-1">
-          {lang === "ua" ? (
-            <>
-              Nova Post Europe: логістика як{" "}
-              <em className="serif-italic text-np-red">невидимий сервіс</em>
-            </>
-          ) : (
-            <>
-              Nova Post Europe: logistics as{" "}
-              <em className="serif-italic text-np-red">invisible service</em>
-            </>
-          )}
+          {s.titleParts.plain}{" "}
+          <em className="serif-italic text-np-red">{s.titleParts.italic}</em>
         </h2>
         <p className="text-base md:text-lg text-muted max-w-2xl mb-14 font-light stagger-2">
           {s.subtitle}

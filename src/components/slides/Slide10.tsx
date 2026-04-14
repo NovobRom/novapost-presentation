@@ -49,11 +49,9 @@ export function Slide10() {
 
         {/* Title */}
         <h2 className="font-display text-display-lg mb-4 max-w-4xl stagger-1">
-          {lang === "ua" ? (
-            <>AI без <em className="serif-italic text-np-red">контролю</em> - ризик, не перевага</>
-          ) : (
-            <>AI without <em className="serif-italic text-np-red">control</em> is a risk, not an advantage</>
-          )}
+          {s.titleParts.plain}{" "}
+          <em className="serif-italic text-np-red">{s.titleParts.italic}</em>
+          {s.titleParts.after && ` ${s.titleParts.after}`}
         </h2>
         <p className="text-base md:text-lg text-paper/50 max-w-2xl mb-14 font-light stagger-2">{s.subtitle}</p>
 

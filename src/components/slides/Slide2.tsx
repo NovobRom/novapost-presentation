@@ -24,11 +24,11 @@ export function Slide2() {
 
         {/* Title */}
         <h2 className="font-display text-display-xl mb-20 max-w-5xl">
-          AI{" "}
-          <em className="serif-italic text-paper/70">всюди.</em>
+          {s.titleParts.line1}{" "}
+          <em className="serif-italic text-paper/70">{s.titleParts.line1Italic}</em>
           <br />
-          <span className="text-pop">Цінність</span>{" "}
-          <em className="serif-italic">- рідко.</em>
+          <span className="text-pop">{s.titleParts.line2}</span>{" "}
+          <em className="serif-italic">{s.titleParts.line2Italic}</em>
         </h2>
 
         {/* Hero contrast - 88% vs 5%, split-screen */}
@@ -36,7 +36,7 @@ export function Slide2() {
           {/* Left: 88% - dimmed */}
           <div className="p-8 md:p-12 bg-paper/5 relative diagonal-stripes">
             <div className="font-mono text-[10px] uppercase tracking-widest text-paper/40 mb-4">
-              {lang === "ua" ? "Поверхневе впровадження" : "Surface adoption"}
+              {s.columnLabels.left}
             </div>
             <div className="font-display text-[8rem] md:text-[12rem] leading-none text-paper/60 mb-3">
               <AnimatedNumber value={88} suffix="%" duration={1800} />
@@ -49,7 +49,7 @@ export function Slide2() {
           {/* Right: 5% - bright pop */}
           <div className="p-8 md:p-12 bg-pop/10 relative">
             <div className="font-mono text-[10px] uppercase tracking-widest text-pop mb-4">
-              {lang === "ua" ? "Реальна цінність" : "Real value"}
+              {s.columnLabels.right}
             </div>
             <div className="font-display text-[8rem] md:text-[12rem] leading-none text-pop glow-pop mb-3">
               <AnimatedNumber value={5} suffix="%" duration={2200} />
@@ -83,19 +83,9 @@ export function Slide2() {
         {/* Conclusion */}
         <div className="border-t border-paper/20 pt-10">
           <p className="font-display text-3xl md:text-5xl text-paper leading-tight">
-            {lang === "ua" ? (
-              <>
-                Проблема не в технологіях.
-                <br />
-                <em className="serif-italic text-pop">Проблема в підході.</em>
-              </>
-            ) : (
-              <>
-                The problem isn't technology.
-                <br />
-                <em className="serif-italic text-pop">The problem is approach.</em>
-              </>
-            )}
+            {s.conclusionParts.plain}
+            <br />
+            <em className="serif-italic text-pop">{s.conclusionParts.italic}</em>
           </p>
         </div>
       </div>

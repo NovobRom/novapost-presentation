@@ -49,20 +49,26 @@ export const slide2 = {
   ua: {
     eyebrow: "Парадокс",
     title: "AI всюди. Цінність - рідко.",
+    titleParts: { line1: "AI", line1Italic: "всюди.", line2: "Цінність", line2Italic: "- рідко." },
+    columnLabels: { left: "Поверхневе впровадження", right: "Реальна цінність" },
     leadStat: { value: "88%", label: "компаній використовують AI хоча б в одній функції" },
     contrastStat: { value: "5%", label: "отримують реальний P&L ефект (>5% EBIT)" },
     failureStat: { value: "88%", label: "бізнес-трансформацій не досягають початкових цілей (Bain, 2024)" },
     redesignStat: { value: "21%", label: "організацій реально перепроєктували процеси під AI" },
     conclusion: "Проблема не в технологіях. Проблема в підході.",
+    conclusionParts: { plain: "Проблема не в технологіях.", italic: "Проблема в підході." },
   },
   en: {
     eyebrow: "The paradox",
     title: "AI is everywhere. Value is rare.",
+    titleParts: { line1: "AI is", line1Italic: "everywhere.", line2: "Value", line2Italic: "is rare." },
+    columnLabels: { left: "Surface adoption", right: "Real value" },
     leadStat: { value: "88%", label: "of companies use AI in at least one function" },
     contrastStat: { value: "5%", label: "achieve real P&L impact (>5% EBIT)" },
     failureStat: { value: "88%", label: "of business transformations miss their original goals (Bain, 2024)" },
     redesignStat: { value: "21%", label: "of organizations actually redesigned workflows for AI" },
     conclusion: "The problem isn't technology. The problem is approach.",
+    conclusionParts: { plain: "The problem isn't technology.", italic: "The problem is approach." },
   },
 };
 
@@ -71,6 +77,7 @@ export const slide4 = {
   ua: {
     eyebrow: "Бачення 2030",
     title: "Nova Post Europe: логістика як невидимий сервіс",
+    titleParts: { plain: "Nova Post Europe: логістика як", italic: "невидимий сервіс" },
     subtitle: "Компанія, де AI прибирає тертя між відправником і отримувачем.",
     blocks: [
       {
@@ -102,6 +109,7 @@ export const slide4 = {
   en: {
     eyebrow: "Vision 2030",
     title: "Nova Post Europe: logistics as invisible service",
+    titleParts: { plain: "Nova Post Europe: logistics as", italic: "invisible service" },
     subtitle: "A company where AI removes friction between sender and recipient.",
     blocks: [
       {
@@ -137,6 +145,7 @@ export const slide5 = {
   ua: {
     eyebrow: "Стратегія",
     title: "Три горизонти трансформації",
+    titleParts: { plain: "Три горизонти", italic: "трансформації" },
     subtitle: "Кожен горизонт має вимірюваний результат. Немає абстрактних цілей.",
     horizons: [
       {
@@ -168,6 +177,7 @@ export const slide5 = {
   en: {
     eyebrow: "Strategy",
     title: "Three Horizons of Transformation",
+    titleParts: { plain: "Three Horizons of", italic: "Transformation" },
     subtitle: "Each horizon has a measurable outcome. No abstract goals.",
     horizons: [
       {
@@ -203,6 +213,7 @@ export const slide6 = {
   ua: {
     eyebrow: "Живий демо",
     title: "AI-Copilot оператора",
+    titleSuffix: "оператора",
     description:
       "Оператор запитав. AI відповів. Жодного пошуку по папках, жодного дзвінка супервайзору. Правила 47 країн у відповіді за секунди.",
     badge: "Це не презентація. Це продукт.",
@@ -223,12 +234,15 @@ export const slide6 = {
     ],
     notebookLink: "Внутрішня база знань (NotebookLM)",
     rateError: "Забагато запитів. Зачекайте хвилину.",
+    responseError: "Не вдалося отримати відповідь.",
+    networkError: "Помилка підключення. Перевірте мережу.",
     loadingText: "Copilot думає...",
     suggestionsLabel: "Або спробуйте швидкі запити:",
   },
   en: {
     eyebrow: "Live demo",
     title: "Operator AI-Copilot",
+    titleSuffix: "for operators",
     description:
       "The operator asked. The AI answered. No folder search, no call to a supervisor. Rules for 47 countries delivered in seconds.",
     badge: "This is not a presentation. This is a product.",
@@ -249,6 +263,8 @@ export const slide6 = {
     ],
     notebookLink: "Internal Knowledge Base (NotebookLM)",
     rateError: "Too many requests. Wait a minute.",
+    responseError: "Failed to get a response.",
+    networkError: "Connection error. Check your network.",
     loadingText: "Copilot is thinking...",
     suggestionsLabel: "Or try quick prompts:",
   },
@@ -259,6 +275,7 @@ export const slide7 = {
   ua: {
     eyebrow: "Економіка",
     title: "Трансформація окупається",
+    titleParts: { plain: "Трансформація", italic: "окупається" },
     stats: [
       { value: "5–20%", label: "скорочення логістичних витрат", source: "McKinsey" },
       { value: "+30%", label: "продуктивність field workers", source: "McKinsey" },
@@ -283,6 +300,7 @@ export const slide7 = {
   en: {
     eyebrow: "Economics",
     title: "Transformation pays off",
+    titleParts: { plain: "Transformation", italic: "pays off" },
     stats: [
       { value: "5–20%", label: "reduction in logistics costs", source: "McKinsey" },
       { value: "+30%", label: "productivity for field workers", source: "McKinsey" },
@@ -311,6 +329,7 @@ export const slide8 = {
   ua: {
     eyebrow: "Люди",
     title: "Технологія: 20%. Люди: 80%.",
+    titleParts: { plain: "Технологія: 20%.", italic: "Люди: 80%." },
     subtitle: "Більшість AI-трансформацій провалюється не через технологію.",
     problems: [
       { number: "01", title: "Страх заміни", body: "Працівники бачать AI як загрозу роботі, не як інструмент." },
@@ -328,6 +347,7 @@ export const slide8 = {
   en: {
     eyebrow: "People",
     title: "Technology is 20%. People are 80%.",
+    titleParts: { plain: "Technology is 20%.", italic: "People are 80%." },
     subtitle: "Most AI transformations fail not because of technology.",
     problems: [
       { number: "01", title: "Fear of replacement", body: "Employees see AI as a threat to their jobs, not a tool." },
@@ -349,6 +369,7 @@ export const slide9 = {
   ua: {
     eyebrow: "Культура",
     title: "Культура Творця - 3 механіки",
+    titleParts: { plain: "Культура", italic: "Творця", after: "- 3 механіки" },
     subtitle: "Не можна «впровадити» AI-культуру. Її можна лише виростити через системні механіки.",
     mechanisms: [
       {
@@ -377,6 +398,7 @@ export const slide9 = {
   en: {
     eyebrow: "Culture",
     title: "Creator Culture - 3 mechanisms",
+    titleParts: { plain: "Creator", italic: "Culture", after: "- 3 mechanisms" },
     subtitle: "You can't 'implement' AI culture. You can only grow it through systemic mechanisms.",
     mechanisms: [
       {
@@ -409,6 +431,7 @@ export const slide10 = {
   ua: {
     eyebrow: "Контроль",
     title: "AI без контролю - ризик, не перевага",
+    titleParts: { plain: "AI без", italic: "контролю", after: "- ризик, не перевага" },
     subtitle: "Довіра будується через прозорість і процеси, а не через обіцянки.",
     checks: [
       {
@@ -459,6 +482,7 @@ export const slide10 = {
   en: {
     eyebrow: "Control",
     title: "AI without control is a risk, not an advantage",
+    titleParts: { plain: "AI without", italic: "control", after: "is a risk, not an advantage" },
     subtitle: "Trust is built through transparency and processes, not through promises.",
     checks: [
       {
@@ -513,6 +537,7 @@ export const slide11 = {
   ua: {
     eyebrow: "90 днів",
     title: "Перші 90 днів на ролі",
+    titleParts: { plain: "Перші", italic: "90 днів", after: "на ролі" },
     subtitle: "Конкретний план з вимірюваними результатами кожного місяця.",
     phases: [
       {
@@ -564,6 +589,7 @@ export const slide11 = {
   en: {
     eyebrow: "90 days",
     title: "First 90 days in the role",
+    titleParts: { plain: "First", italic: "90 days", after: "in the role" },
     subtitle: "A concrete plan with measurable results each month.",
     phases: [
       {
@@ -619,6 +645,8 @@ export const slide12 = {
   ua: {
     eyebrow: "Про мене",
     title: "Роман Новобранець",
+    nameParts: { first: "Роман", last: "Новобранець" },
+    timelineLabel: "Хронологія",
     role: "Head of Delivery · AI Євангеліст",
     company: "Nova Post Europe",
     bio: "10 років Nova Post: від оператора відділення до Head of Delivery. Запустив Baltic регіон з нуля - Литва, Латвія, Естонія. Будую AI-продукти, що вирішують реальні операційні проблеми.",
@@ -645,6 +673,8 @@ export const slide12 = {
   en: {
     eyebrow: "About me",
     title: "Roman Novobranets",
+    nameParts: { first: "Roman", last: "Novobranets" },
+    timelineLabel: "Timeline",
     role: "Head of Delivery · AI Evangelist",
     company: "Nova Post Europe",
     bio: "10 years at Nova Post: from branch operator to Head of Delivery. Launched the Baltic region from scratch - Lithuania, Latvia, Estonia. Building AI products that solve real operational problems.",
@@ -675,6 +705,8 @@ export const slide3 = {
   ua: {
     eyebrow: "Що працює",
     title: "Три патерни AI-лідерів",
+    titleParts: { plain: "Три патерни", italic: "AI-лідерів" },
+    barLabels: { without: "Без редизайну", with: "З редизайном процесів" },
     subtitle: "McKinsey проаналізував 200+ AI-трансформацій. Переможці роблять це інакше:",
     patterns: [
       {
@@ -702,6 +734,8 @@ export const slide3 = {
   en: {
     eyebrow: "What works",
     title: "Three patterns of AI leaders",
+    titleParts: { plain: "Three patterns of", italic: "AI leaders" },
+    barLabels: { without: "Without redesign", with: "With workflow redesign" },
     subtitle: "McKinsey analyzed 200+ AI transformations. Winners do it differently:",
     patterns: [
       {

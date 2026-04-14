@@ -53,17 +53,8 @@ export function Slide5() {
 
         {/* Title */}
         <h2 className="font-display text-display-lg mb-4 max-w-4xl stagger-1">
-          {lang === "ua" ? (
-            <>
-              Три горизонти{" "}
-              <em className="serif-italic text-paper/60">трансформації</em>
-            </>
-          ) : (
-            <>
-              Three Horizons of{" "}
-              <em className="serif-italic text-paper/60">Transformation</em>
-            </>
-          )}
+          {s.titleParts.plain}{" "}
+          <em className="serif-italic text-paper/60">{s.titleParts.italic}</em>
         </h2>
         <p className="text-base md:text-lg text-paper/50 max-w-2xl mb-16 font-light stagger-2">
           {s.subtitle}

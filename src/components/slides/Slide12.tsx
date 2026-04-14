@@ -34,11 +34,8 @@ export function Slide12() {
           <div>
             {/* Name */}
             <h2 className="font-display text-display-xl mb-3 stagger-1">
-              {lang === "ua" ? (
-                <>Роман <em className="serif-italic text-np-red">Новобранець</em></>
-              ) : (
-                <>Roman <em className="serif-italic text-np-red">Novobranets</em></>
-              )}
+              {s.nameParts.first}{" "}
+              <em className="serif-italic text-np-red">{s.nameParts.last}</em>
             </h2>
 
             {/* Role + company */}
@@ -58,7 +55,7 @@ export function Slide12() {
 
             {/* Journey timeline - horizontal */}
             <div className="stagger-3">
-              <div className="font-mono text-[10px] uppercase tracking-widest text-paper/30 mb-5">Timeline</div>
+              <div className="font-mono text-[10px] uppercase tracking-widest text-paper/30 mb-5">{s.timelineLabel}</div>
               <div className="space-y-3">
                 {s.journey.map((j) => (
                   <div key={j.year} className="flex items-baseline gap-4">
