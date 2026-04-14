@@ -159,17 +159,46 @@ export async function POST(req: NextRequest) {
     .map((u) => u.trim())
     .filter(Boolean);
 
-  try {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 8000);
+  // Веб-джерела і PDF за URL (Nova Post / митниця тощо)
+  // Встанови GEMINI_SOURCE_URLS в Vercel як рядок URL через кому
+  const sourceUrls = (process.env.GEMINI_SOURCE_URLS ?? "")
+    .split(",")
+    .map((u) => u.trim())
+    .filter(Boolean);
 
-    // Якщо є файли бази знань - підключаємо їх до запиту
-    const userParts: { text?: string; fileData?: { mimeType: string; fileUri: string } }[] = [
-      ...fileUris.map((uri) => ({
+  try {
+    // URL context потребує більше часу на завантаження сторінок
+    const timeoutMs = sourceUrls.length > 0 ? 20_000 : 8_000;
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+
+    // Частини запиту: спочатку PDF файли (File API), потім текст з URL-контекстом
+    type Part = { text: string } | { fileData: { mimeType: string; fileUri: string } };
+    const userParts: Part[] = [
+      ...fileUris.map((uri): Part => ({
         fileData: { mimeType: "application/pdf", fileUri: uri },
       })),
-      { text: query },
+      {
+        text: sourceUrls.length
+          ? `Knowledge base sources (fetch and read before answering):\n${sourceUrls.map((u) => `- ${u}`).join("\n")}\n\nOperator question: ${query}`
+          : query,
+      },
     ];
+
+    // url_context дозволяє Gemini завантажувати сторінки і PDF за URL напряму
+    const requestBody: Record<string, unknown> = {
+      systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
+      contents: [{ role: "user", parts: userParts }],
+      generationConfig: {
+        temperature: 0.15,
+        maxOutputTokens: 400,
+        topP: 0.8,
+      },
+      safetySettings: [
+        { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_ONLY_HIGH" },
+      ],
+    };
+    if (sourceUrls.length) requestBody.tools = [{ url_context: {} }];
 
     const geminiRes = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
@@ -177,21 +206,7 @@ export async function POST(req: NextRequest) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         signal: controller.signal,
-        body: JSON.stringify({
-          systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
-          contents: [{ role: "user", parts: userParts }],
-          generationConfig: {
-            temperature: 0.15,
-            maxOutputTokens: 400,
-            topP: 0.8,
-          },
-          safetySettings: [
-            {
-              category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-              threshold: "BLOCK_ONLY_HIGH",
-            },
-          ],
-        }),
+        body: JSON.stringify(requestBody),
       }
     );
 
@@ -266,7 +281,14 @@ export async function GET() {
       return NextResponse.json({ status: "key_error", httpStatus: res.status, detail: body.slice(0, 300) });
     }
 
-    return NextResponse.json({ status: "ok", model, message: "Ключ валідний, API відповідає" });
+    const kbFiles = (process.env.GEMINI_FILE_URIS ?? "").split(",").filter((s) => s.trim()).length;
+    const kbUrls  = (process.env.GEMINI_SOURCE_URLS ?? "").split(",").filter((s) => s.trim()).length;
+    return NextResponse.json({
+      status: "ok",
+      model,
+      message: "Ключ валідний, API відповідає",
+      kb: { fileUris: kbFiles, sourceUrls: kbUrls },
+    });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     return NextResponse.json({ status: "timeout_or_network", error: msg });
