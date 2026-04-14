@@ -206,10 +206,10 @@ export const slide6 = {
     description:
       "Оператор запитав. AI відповів. Жодного пошуку по папках, жодного дзвінка супервайзору. Правила 47 країн у відповіді за секунди.",
     badge: "Це не презентація. Це продукт.",
-    badgeSub: "Працює прямо зараз через Gemini 2.0 Flash API",
+    badgeSub: "Працює прямо зараз через Gemini 2.5 Flash API",
     inputPlaceholder: "Запитайте про правила відправлення...",
     sendLabel: "Відправити",
-    poweredBy: "Gemini 2.0 Flash",
+    poweredBy: "Gemini 2.5 Flash",
     sourceLabel: {
       gemini: "Відповідь від Gemini API",
       fallback: "Приклад відповіді (offline-режим)",
@@ -232,10 +232,10 @@ export const slide6 = {
     description:
       "The operator asked. The AI answered. No folder search, no call to a supervisor. Rules for 47 countries delivered in seconds.",
     badge: "This is not a presentation. This is a product.",
-    badgeSub: "Running right now via Gemini 2.0 Flash API",
+    badgeSub: "Running right now via Gemini 2.5 Flash API",
     inputPlaceholder: "Ask about shipping rules...",
     sendLabel: "Send",
-    poweredBy: "Gemini 2.0 Flash",
+    poweredBy: "Gemini 2.5 Flash",
     sourceLabel: {
       gemini: "Answer from Gemini API",
       fallback: "Example response (offline mode)",

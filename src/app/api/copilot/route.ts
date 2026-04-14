@@ -140,7 +140,7 @@ export async function POST(req: NextRequest) {
   }
 
   const apiKey = process.env.GEMINI_API_KEY?.trim();
-  const model = process.env.GEMINI_MODEL?.trim() || "gemini-2.0-flash";
+  const model = process.env.GEMINI_MODEL?.trim() || "gemini-2.5-flash";
 
   if (!apiKey || apiKey === "your_gemini_api_key_here") {
     // Return fallback in dev/demo mode
@@ -223,7 +223,7 @@ export async function POST(req: NextRequest) {
 // -----------------------------------------------------------------------
 export async function GET() {
   const apiKey = process.env.GEMINI_API_KEY?.trim();
-  const model = process.env.GEMINI_MODEL?.trim() || "gemini-2.0-flash";
+  const model = process.env.GEMINI_MODEL?.trim() || "gemini-2.5-flash";
 
   if (!apiKey || apiKey === "your_gemini_api_key_here") {
     return NextResponse.json({ status: "no_key", message: "GEMINI_API_KEY не встановлено" });
