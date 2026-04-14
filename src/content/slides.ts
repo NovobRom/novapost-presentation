@@ -623,10 +623,10 @@ export const slide12 = {
     company: "Nova Post Europe",
     bio: "10 років Nova Post: від оператора відділення до Head of Delivery. Запустив Baltic регіон з нуля - Литва, Латвія, Естонія. Будую AI-продукти, що вирішують реальні операційні проблеми.",
     journey: [
-      { year: "2014", event: "Оператор відділення Nova Post" },
-      { year: "2018", event: "Head of Operations, Kyiv cluster" },
-      { year: "2022", event: "Launch Baltic region (LT, LV, EE)" },
-      { year: "2025", event: "Head of Delivery, Nova Post Europe" },
+      { year: "2018", event: "Head of Post Office, Рубіжне - перша управлінська роль" },
+      { year: "2021", event: "Territorial Manager, Луганський регіон - 23 відділення" },
+      { year: "2023", event: "Operations Manager, Baltic Region (LT, LV, EE)" },
+      { year: "2025", event: "Head of Delivery, Nova Post Lithuania" },
     ],
     projects: {
       label: "Реалізовані AI-проєкти",
@@ -649,10 +649,10 @@ export const slide12 = {
     company: "Nova Post Europe",
     bio: "10 years at Nova Post: from branch operator to Head of Delivery. Launched the Baltic region from scratch - Lithuania, Latvia, Estonia. Building AI products that solve real operational problems.",
     journey: [
-      { year: "2014", event: "Branch operator, Nova Post" },
-      { year: "2018", event: "Head of Operations, Kyiv cluster" },
-      { year: "2022", event: "Launch Baltic region (LT, LV, EE)" },
-      { year: "2025", event: "Head of Delivery, Nova Post Europe" },
+      { year: "2018", event: "Head of Post Office, Rubezhnoye - first management role" },
+      { year: "2021", event: "Territorial Manager, Luhansk Region - 23 branches" },
+      { year: "2023", event: "Operations Manager, Baltic Region (LT, LV, EE)" },
+      { year: "2025", event: "Head of Delivery, Nova Post Lithuania" },
     ],
     projects: {
       label: "Delivered AI projects",
