@@ -76,7 +76,7 @@ export function Slide5() {
                 className={`relative flex flex-col p-7 rounded-2xl border bg-paper/5 backdrop-blur-sm transition-all duration-300 hover:bg-paper/10 ${ac.border} ${STAGGER[i]} ${isMiddle ? "md:translate-y-5" : ""}`}
               >
                 {/* H-label large */}
-                <div className={`font-display text-[5rem] md:text-[6rem] leading-none font-light mb-1 ${ac.label}`}>
+                <div className={`font-display horizon-label font-light mb-1 ${ac.label}`}>
                   {h.label}
                 </div>
 

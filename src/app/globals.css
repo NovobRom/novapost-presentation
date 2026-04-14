@@ -46,7 +46,33 @@ html {
 /* Laptop screens (13-14"): tighter padding so content fits without inner scroll */
 @media (max-height: 800px) {
   .slide {
-    padding: clamp(1.5rem, 3vh, 3rem) clamp(1rem, 4vw, 3rem);
+    padding: clamp(1rem, 2.5vh, 2.5rem) clamp(1rem, 4vw, 3rem);
+  }
+  /* Compress all large vertical margins — rem values don't scale with vh */
+  .slide .mb-20 { margin-bottom: 1rem; }
+  .slide .mb-16 { margin-bottom: 0.75rem; }
+  .slide .mb-14 { margin-bottom: 0.75rem; }
+  .slide .mb-12 { margin-bottom: 0.625rem; }
+  .slide .mb-10 { margin-bottom: 0.5rem; }
+  .slide .mt-6  { margin-top: 0.5rem; }
+  .slide .pt-10 { padding-top: 0.5rem; }
+  .slide .pt-5  { padding-top: 0.375rem; }
+  /* Compress inner card / panel padding */
+  .slide .p-12 { padding: 0.875rem; }
+  .slide .p-8  { padding: 0.875rem; }
+  .slide .p-7  { padding: 0.75rem; }
+  .slide .p-6  { padding: 0.625rem; }
+  /* Responsive Tailwind variants (md: prefix) — colon escaped in CSS selector */
+  .slide .md\:p-12 { padding: 0.875rem; }
+  /* Compress grid gaps */
+  .slide .gap-12     { gap: 0.75rem; }
+  .slide .gap-8      { gap: 0.625rem; }
+  .slide .md\:gap-12 { gap: 0.75rem; }
+  /* Remove forced min-height on cards — they can shrink on short screens */
+  .slide .min-h-\[240px\] { min-height: 0; }
+  /* Scale down all display headings */
+  .slide h1, .slide h2 {
+    font-size: clamp(1.75rem, min(4.5vw, 8vh), 3.5rem) !important;
   }
 }
 
@@ -148,11 +174,16 @@ html {
 .stagger-4 { animation: stagger-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards; opacity: 0; }
 .stagger-5 { animation: stagger-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards; opacity: 0; }
 
-/* Short screens: scale down display headings so slides fit without inner scroll */
-@media (max-height: 800px) {
-  .slide h1, .slide h2 {
-    font-size: clamp(1.75rem, min(4.5vw, 8vh), 3.5rem) !important;
-  }
+/* Height-aware hero numbers (Slide2: 88% / 5% contrast block) */
+.hero-number {
+  font-size: clamp(3rem, min(8vw, 15vh), 10rem);
+  line-height: 1;
+}
+
+/* Height-aware horizon H-labels (Slide5: H1 / H2 / H3) */
+.horizon-label {
+  font-size: clamp(2.5rem, min(5vw, 9vh), 6rem);
+  line-height: 1;
 }
 
 /* Print styles - for PDF export */

@@ -89,7 +89,7 @@ export function Slide3() {
           {s.patterns.map((p, i) => (
             <div
               key={p.number}
-              className={`relative p-8 bg-paper-bright border border-border-soft rounded-2xl hover:border-np-red transition-all duration-300 group flex flex-col min-h-[240px] ${
+              className={`relative p-8 bg-paper-bright border border-border-soft rounded-2xl hover:border-np-red transition-all duration-300 group flex flex-col ${
                 i === 1 ? "md:translate-y-6" : ""
               }`}
             >

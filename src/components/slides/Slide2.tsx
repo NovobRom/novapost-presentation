@@ -38,7 +38,7 @@ export function Slide2() {
             <div className="font-mono text-[10px] uppercase tracking-widest text-paper/40 mb-4">
               {s.columnLabels.left}
             </div>
-            <div className="font-display text-[8rem] md:text-[12rem] leading-none text-paper/60 mb-3">
+            <div className="font-display hero-number text-paper/60 mb-3">
               <AnimatedNumber value={88} suffix="%" duration={1800} />
             </div>
             <p className="text-paper/70 text-sm md:text-base leading-snug max-w-xs">
@@ -51,7 +51,7 @@ export function Slide2() {
             <div className="font-mono text-[10px] uppercase tracking-widest text-pop mb-4">
               {s.columnLabels.right}
             </div>
-            <div className="font-display text-[8rem] md:text-[12rem] leading-none text-pop glow-pop mb-3">
+            <div className="font-display hero-number text-pop glow-pop mb-3">
               <AnimatedNumber value={5} suffix="%" duration={2200} />
             </div>
             <p className="text-paper text-sm md:text-base leading-snug max-w-xs">
