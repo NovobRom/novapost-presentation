@@ -87,7 +87,7 @@ export function Slide6() {
         ...prev,
         {
           role: "assistant",
-          text: data.answer ?? "Не вдалося отримати відповідь.",
+          text: data.answer ?? s.responseError,
           source: data.source ?? "fallback",
         },
       ]);
@@ -96,7 +96,7 @@ export function Slide6() {
         ...prev,
         {
           role: "assistant",
-          text: "Помилка підключення. Перевірте мережу.",
+          text: s.networkError,
           source: "fallback",
         },
       ]);
@@ -140,7 +140,7 @@ export function Slide6() {
             AI-
             <em className="serif-italic text-electric">Copilot</em>
             <br />
-            {lang === "ua" ? "оператора" : "for operators"}
+            {s.titleSuffix}
           </h2>
 
           {/* Description */}

@@ -5,7 +5,7 @@ import { slide3 } from "@/content/slides";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { useEffect, useRef, useState } from "react";
 
-function BarChart() {
+function BarChart({ withoutLabel, withLabel }: { withoutLabel: string; withLabel: string }) {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -25,7 +25,7 @@ function BarChart() {
       <div>
         <div className="flex items-baseline justify-between mb-2">
           <span className="font-mono text-[10px] uppercase tracking-widest text-ink/60">
-            {visible ? "Without redesign" : ""}
+            {visible ? withoutLabel : ""}
           </span>
           <span className="font-display text-2xl text-ink/70">
             <AnimatedNumber value={12} suffix="%" duration={1400} />
@@ -43,7 +43,7 @@ function BarChart() {
       <div>
         <div className="flex items-baseline justify-between mb-2">
           <span className="font-mono text-[10px] uppercase tracking-widest text-pop">
-            {visible ? "With workflow redesign" : ""}
+            {visible ? withLabel : ""}
           </span>
           <span className="font-display text-2xl text-pop">
             <AnimatedNumber value={34} suffix="%" duration={1800} />
@@ -77,15 +77,8 @@ export function Slide3() {
 
         {/* Title - editorial style з italic */}
         <h2 className="font-display text-display-lg mb-6 max-w-4xl">
-          {lang === "ua" ? (
-            <>
-              Три патерни <em className="serif-italic text-np-red">AI-лідерів</em>
-            </>
-          ) : (
-            <>
-              Three patterns of <em className="serif-italic text-np-red">AI leaders</em>
-            </>
-          )}
+          {s.titleParts.plain}{" "}
+          <em className="serif-italic text-np-red">{s.titleParts.italic}</em>
         </h2>
         <p className="text-base md:text-lg text-muted max-w-2xl mb-16 font-light">
           {s.subtitle}
@@ -96,7 +89,7 @@ export function Slide3() {
           {s.patterns.map((p, i) => (
             <div
               key={p.number}
-              className={`relative p-8 bg-paper-bright border border-border-soft rounded-2xl hover:border-np-red transition-all duration-300 group ${
+              className={`relative p-8 bg-paper-bright border border-border-soft rounded-2xl hover:border-np-red transition-all duration-300 group flex flex-col min-h-[240px] ${
                 i === 1 ? "md:translate-y-6" : ""
               }`}
             >
@@ -108,7 +101,7 @@ export function Slide3() {
               <h3 className="font-display text-2xl mb-4 leading-tight mt-2 group-hover:text-np-red transition-colors">
                 {p.title}
               </h3>
-              <p className="text-sm text-ink-soft leading-relaxed font-light">
+              <p className="text-sm text-ink-soft leading-relaxed font-light flex-1">
                 {p.body}
               </p>
             </div>
@@ -136,7 +129,7 @@ export function Slide3() {
           </div>
 
           <div className="relative z-10">
-            <BarChart />
+            <BarChart withoutLabel={s.barLabels.without} withLabel={s.barLabels.with} />
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { Instrument_Serif, JetBrains_Mono, Geist } from "next/font/google";
 import { LangProvider } from "@/lib/lang-context";
 import { LangSwitch } from "@/components/LangSwitch";
 import { SlideCounter } from "@/components/SlideCounter";
+import { KeyboardNav } from "@/components/KeyboardNav";
 import "./globals.css";
 
 const instrument = Instrument_Serif({
@@ -36,11 +37,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "uk_UA",
     alternateLocale: ["en_US"],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Change Leadership — Nova Post Europe" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Change Leadership - Nova Post Europe",
     description: "AI Evangelist application by Roman Novobranets",
+    images: ["/og-image.png"],
   },
 };
 
@@ -55,6 +58,7 @@ export default function RootLayout({
         <LangProvider>
           <LangSwitch />
           <SlideCounter />
+          <KeyboardNav />
           <main className="slides-container no-scrollbar">
             {children}
           </main>

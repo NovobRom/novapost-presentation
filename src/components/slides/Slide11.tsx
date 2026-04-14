@@ -27,11 +27,9 @@ export function Slide11() {
 
         {/* Title */}
         <h2 className="font-display text-display-lg mb-4 max-w-4xl stagger-1">
-          {lang === "ua" ? (
-            <>Перші <em className="serif-italic text-np-red">90 днів</em> на ролі</>
-          ) : (
-            <>First <em className="serif-italic text-np-red">90 days</em> in the role</>
-          )}
+          {s.titleParts.plain}{" "}
+          <em className="serif-italic text-np-red">{s.titleParts.italic}</em>
+          {s.titleParts.after && ` ${s.titleParts.after}`}
         </h2>
         <p className="text-base md:text-lg text-muted max-w-2xl mb-14 font-light stagger-2">{s.subtitle}</p>
 
@@ -50,7 +48,7 @@ export function Slide11() {
                 </div>
 
                 {/* Card */}
-                <div className={`flex-1 p-6 rounded-2xl border ${ac.border} bg-paper-bright`}>
+                <div className={`flex-1 flex flex-col p-6 rounded-2xl border ${ac.border} bg-paper-bright`}>
                   {/* Period */}
                   <div className={`font-mono text-[10px] uppercase tracking-widest mb-1 ${ac.text}`}>
                     {phase.period}
@@ -59,7 +57,7 @@ export function Slide11() {
                   <h3 className="font-display text-xl mb-5 leading-tight">{phase.label}</h3>
 
                   {/* Items */}
-                  <ul className="space-y-2.5 mb-5">
+                  <ul className="space-y-2.5 mb-5 flex-1">
                     {phase.items.map((item, j) => (
                       <li key={j} className="flex gap-2.5 text-sm text-ink-soft/70 font-light leading-snug">
                         <span className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${ac.dot}`} />
@@ -69,7 +67,7 @@ export function Slide11() {
                   </ul>
 
                   {/* Outcome */}
-                  <div className={`pt-4 border-t ${ac.border}`}>
+                  <div className={`mt-auto pt-4 border-t ${ac.border}`}>
                     <div className={`text-xs font-mono uppercase tracking-wider ${ac.text} leading-snug`}>
                       {phase.outcome}
                     </div>

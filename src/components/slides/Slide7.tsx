@@ -68,11 +68,8 @@ export function Slide7() {
 
         {/* Title */}
         <h2 className="font-display text-display-lg mb-16 max-w-3xl stagger-1">
-          {lang === "ua" ? (
-            <>Трансформація <em className="serif-italic text-pop">окупається</em></>
-          ) : (
-            <>Transformation <em className="serif-italic text-pop">pays off</em></>
-          )}
+          {s.titleParts.plain}{" "}
+          <em className="serif-italic text-pop">{s.titleParts.italic}</em>
         </h2>
 
         {/* 4 big editorial numbers */}

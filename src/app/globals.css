@@ -28,7 +28,8 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem 1.5rem;
+  /* Adaptive padding: responds to both width and viewport height */
+  padding: clamp(2rem, 5vh, 5rem) clamp(1rem, 4vw, 3rem);
   position: relative;
   overflow: hidden;
   content-visibility: auto;
@@ -42,12 +43,18 @@ html {
   pointer-events: none;
 }
 
-@media (min-width: 768px) {
-  .slide { padding: 6rem 4rem; }
+/* Laptop screens (13-14"): tighter padding so content fits without inner scroll */
+@media (max-height: 800px) {
+  .slide {
+    padding: clamp(1.5rem, 3vh, 3rem) clamp(1rem, 4vw, 3rem);
+  }
 }
 
-@media (min-width: 1280px) {
-  .slide { padding: 8rem 6rem; }
+/* Large screens with generous height: full editorial spacing */
+@media (min-width: 1280px) and (min-height: 900px) {
+  .slide {
+    padding: 6rem 6rem;
+  }
 }
 
 .slides-container {
@@ -140,3 +147,26 @@ html {
 .stagger-3 { animation: stagger-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards; opacity: 0; }
 .stagger-4 { animation: stagger-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards; opacity: 0; }
 .stagger-5 { animation: stagger-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards; opacity: 0; }
+
+/* Short screens: scale down display headings so slides fit without inner scroll */
+@media (max-height: 800px) {
+  .slide h1, .slide h2 {
+    font-size: clamp(1.75rem, min(4.5vw, 8vh), 3.5rem) !important;
+  }
+}
+
+/* Print styles - for PDF export */
+@media print {
+  .slides-container {
+    overflow: visible !important;
+    height: auto !important;
+    scroll-snap-type: none !important;
+  }
+  .slide {
+    page-break-after: always;
+    min-height: auto;
+    padding: 2rem !important;
+  }
+  .fixed { display: none !important; }
+  .deco-blob { display: none !important; }
+}
