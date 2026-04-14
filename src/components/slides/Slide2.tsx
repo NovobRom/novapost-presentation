@@ -28,12 +28,12 @@ export function Slide2() {
           <em className="serif-italic text-paper/70">всюди.</em>
           <br />
           <span className="text-pop">Цінність</span>{" "}
-          <em className="serif-italic">— рідко.</em>
+          <em className="serif-italic">- рідко.</em>
         </h2>
 
-        {/* Hero contrast — 88% vs 5%, split-screen */}
+        {/* Hero contrast - 88% vs 5%, split-screen */}
         <div className="grid md:grid-cols-2 gap-1 mb-16 border border-paper/15 rounded-xl overflow-hidden">
-          {/* Left: 88% — dimmed */}
+          {/* Left: 88% - dimmed */}
           <div className="p-8 md:p-12 bg-paper/5 relative diagonal-stripes">
             <div className="font-mono text-[10px] uppercase tracking-widest text-paper/40 mb-4">
               {lang === "ua" ? "Поверхневе впровадження" : "Surface adoption"}
@@ -46,7 +46,7 @@ export function Slide2() {
             </p>
           </div>
 
-          {/* Right: 5% — bright pop */}
+          {/* Right: 5% - bright pop */}
           <div className="p-8 md:p-12 bg-pop/10 relative">
             <div className="font-mono text-[10px] uppercase tracking-widest text-pop mb-4">
               {lang === "ua" ? "Реальна цінність" : "Real value"}

@@ -75,7 +75,7 @@ export function Slide3() {
           </span>
         </div>
 
-        {/* Title — editorial style з italic */}
+        {/* Title - editorial style з italic */}
         <h2 className="font-display text-display-lg mb-6 max-w-4xl">
           {lang === "ua" ? (
             <>
@@ -91,7 +91,7 @@ export function Slide3() {
           {s.subtitle}
         </p>
 
-        {/* Three patterns — асиметричні картки */}
+        {/* Three patterns - асиметричні картки */}
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           {s.patterns.map((p, i) => (
             <div
@@ -115,7 +115,7 @@ export function Slide3() {
           ))}
         </div>
 
-        {/* Proof block — InPost з bar chart */}
+        {/* Proof block - InPost з bar chart */}
         <div className="bg-ink text-paper rounded-2xl p-8 md:p-12 grid md:grid-cols-[1.5fr_1fr] gap-8 md:gap-12 items-center relative overflow-hidden">
           {/* Decorative gradient corner */}
           <div className="deco-blob absolute -top-20 -right-20 w-[300px] h-[300px] rounded-full opacity-15 blur-2xl bg-pop" />

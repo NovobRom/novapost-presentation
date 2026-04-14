@@ -50,9 +50,9 @@ export function Slide9() {
         {/* Title */}
         <h2 className="font-display text-display-lg mb-4 max-w-4xl stagger-1">
           {lang === "ua" ? (
-            <>Культура <em className="serif-italic text-np-red">Творця</em> — 3 механіки</>
+            <>Культура <em className="serif-italic text-np-red">Творця</em> - 3 механіки</>
           ) : (
-            <>Creator <em className="serif-italic text-np-red">Culture</em> — 3 mechanisms</>
+            <>Creator <em className="serif-italic text-np-red">Culture</em> - 3 mechanisms</>
           )}
         </h2>
         <p className="text-base md:text-lg text-muted max-w-2xl mb-14 font-light stagger-2">{s.subtitle}</p>

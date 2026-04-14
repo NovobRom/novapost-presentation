@@ -48,7 +48,7 @@ export const slide1 = {
 export const slide2 = {
   ua: {
     eyebrow: "Парадокс",
-    title: "AI всюди. Цінність — рідко.",
+    title: "AI всюди. Цінність - рідко.",
     leadStat: { value: "88%", label: "компаній використовують AI хоча б в одній функції" },
     contrastStat: { value: "5%", label: "отримують реальний P&L ефект (>5% EBIT)" },
     failureStat: { value: "88%", label: "бізнес-трансформацій не досягають початкових цілей (Bain, 2024)" },
@@ -89,7 +89,7 @@ export const slide4 = {
         id: "manager",
         label: "Менеджер",
         title: "AI-агенти як команда",
-        body: "Рутинні процеси: звіти, прогнози, комунікація — виконують AI-агенти. Менеджер фокусується на рішеннях, які вимагають людини.",
+        body: "Рутинні процеси: звіти, прогнози, комунікація - виконують AI-агенти. Менеджер фокусується на рішеннях, які вимагають людини.",
       },
       {
         id: "expansion",
@@ -143,7 +143,7 @@ export const slide5 = {
         label: "H1",
         period: "0-12 місяців",
         title: "AI-Copilot на кожному робочому місці",
-        body: "No-Code автоматизація: Make, n8n, Zapier. Оператори і менеджери самі автоматизують свою рутину — без черги до IT. Перший потік AI-champions.",
+        body: "No-Code автоматизація: Make, n8n, Zapier. Оператори і менеджери самі автоматизують свою рутину - без черги до IT. Перший потік AI-champions.",
         metric: "100% бек-офісу охоплено AI-Copilot",
         highlight: "Make, n8n, Zapier",
       },
@@ -159,7 +159,7 @@ export const slide5 = {
         label: "H3",
         period: "24-36 місяців",
         title: "Автономні відділення нових форматів",
-        body: "Пілотний запуск в новій країні через автономний депо-формат. Операційні правила, навчання, комплаєнс — AI налаштовує при старті. Масштабування без лінійного зростання штату.",
+        body: "Пілотний запуск в новій країні через автономний депо-формат. Операційні правила, навчання, комплаєнс - AI налаштовує при старті. Масштабування без лінійного зростання штату.",
         metric: "Нова країна за 4 тижні замість 6 місяців",
         highlight: null,
       },
@@ -190,7 +190,7 @@ export const slide5 = {
         label: "H3",
         period: "24-36 months",
         title: "Autonomous branches of new formats",
-        body: "Pilot launch in a new country via autonomous depot format. Operational rules, training, compliance — AI configures at startup. Scaling without linear headcount growth.",
+        body: "Pilot launch in a new country via autonomous depot format. Operational rules, training, compliance - AI configures at startup. Scaling without linear headcount growth.",
         metric: "New country in 4 weeks instead of 6 months",
         highlight: null,
       },
@@ -218,7 +218,7 @@ export const slide6 = {
     suggestions: [
       "Чи можна відправити літієву батарею в Латвію?",
       "Які документи потрібні для посилки з України до Литви?",
-      "Скільки часу займає доставка Вільнюс — Київ?",
+      "Скільки часу займає доставка Вільнюс - Київ?",
       "Чи можна відправити алкоголь в Естонію?",
     ],
     notebookLink: "Внутрішня база знань (NotebookLM)",
@@ -265,7 +265,7 @@ export const slide7 = {
     ],
     gap: {
       label: "Розрив логістики",
-      body: "Логістика відстає: 35% AI adoption проти 51% у рітейлі. Ранній вихід — конкурентна перевага.",
+      body: "Логістика відстає: 35% AI adoption проти 51% у рітейлі. Ранній вихід - конкурентна перевага.",
       logistics: "35%",
       retail: "51%",
       logisticsLabel: "Логістика",
@@ -275,7 +275,7 @@ export const slide7 = {
       label: "Чесне застереження",
       body: "62% AI-проєктів перевищують бюджет на 45%",
       source: "Gartner, 2024",
-      footnote: "Причина — технологія без редизайну процесів. Це вирішуване.",
+      footnote: "Причина: технологія без редизайну процесів. Це вирішуване.",
     },
   },
   en: {
@@ -308,12 +308,12 @@ export const slide7 = {
 export const slide8 = {
   ua: {
     eyebrow: "Люди",
-    title: "Технологія — 20%. Люди — 80%.",
+    title: "Технологія: 20%. Люди: 80%.",
     subtitle: "Більшість AI-трансформацій провалюється не через технологію.",
     problems: [
       { number: "01", title: "Страх заміни", body: "Працівники бачать AI як загрозу роботі, не як інструмент." },
       { number: "02", title: "Втрата контролю менеджерів", body: "Середній менеджмент опирається: AI позбавляє їх монополії на інформацію." },
-      { number: "03", title: "Впровадження зверху донизу", body: "Рішення без залучення виконавців — саботаж гарантований." },
+      { number: "03", title: "Впровадження зверху донизу", body: "Рішення без залучення виконавців - саботаж гарантований." },
     ],
     solutions: [
       { number: "01", title: "AI звільняє час, не людей", body: "Перший меседж трансформації: автоматизується рутина, не ролі. Люди отримують час для складних завдань." },
@@ -346,13 +346,13 @@ export const slide8 = {
 export const slide9 = {
   ua: {
     eyebrow: "Культура",
-    title: "Культура Творця — 3 механіки",
+    title: "Культура Творця - 3 механіки",
     subtitle: "Не можна «впровадити» AI-культуру. Її можна лише виростити через системні механіки.",
     mechanisms: [
       {
         number: "01",
         title: "Фільтр найму «AI First»",
-        body: "Перед відкриттям вакансії обов'язкове питання: чи може AI замінити цю функцію повністю або частково? Якщо так — переосмислюємо роль, не просто наймаємо.",
+        body: "Перед відкриттям вакансії обов'язкове питання: чи може AI замінити цю функцію повністю або частково? Якщо так - переосмислюємо роль, не просто наймаємо.",
         tag: "Hiring",
         accent: "pop",
       },
@@ -366,7 +366,7 @@ export const slide9 = {
       {
         number: "03",
         title: "Менеджер як власник процесу",
-        body: "Кожен менеджер щокварталу ідентифікує мінімум 3 рутини для автоматизації. Це KPI, не побажання. Результати — на борд-рев'ю.",
+        body: "Кожен менеджер щокварталу ідентифікує мінімум 3 рутини для автоматизації. Це KPI, не побажання. Результати - на борд-рев'ю.",
         tag: "Ownership",
         accent: "np-red",
       },
@@ -374,13 +374,13 @@ export const slide9 = {
   },
   en: {
     eyebrow: "Culture",
-    title: "Creator Culture — 3 mechanisms",
+    title: "Creator Culture - 3 mechanisms",
     subtitle: "You can't 'implement' AI culture. You can only grow it through systemic mechanisms.",
     mechanisms: [
       {
         number: "01",
         title: "AI First hiring filter",
-        body: "Before opening any position, a mandatory question: can AI replace this function fully or partially? If yes — rethink the role, don't just hire.",
+        body: "Before opening any position, a mandatory question: can AI replace this function fully or partially? If yes - rethink the role, don't just hire.",
         tag: "Hiring",
         accent: "pop",
       },
@@ -406,7 +406,7 @@ export const slide9 = {
 export const slide10 = {
   ua: {
     eyebrow: "Контроль",
-    title: "AI без контролю — ризик, не перевага",
+    title: "AI без контролю - ризик, не перевага",
     subtitle: "Довіра будується через прозорість і процеси, а не через обіцянки.",
     checks: [
       {
@@ -426,7 +426,7 @@ export const slide10 = {
       {
         id: "mcp",
         title: "MCP як стандарт interoperability",
-        body: "Model Context Protocol — відкритий стандарт для підключення AI-агентів до систем. Уникаємо vendor lock-in, забезпечуємо аудитний слід.",
+        body: "Model Context Protocol - відкритий стандарт для підключення AI-агентів до систем. Уникаємо vendor lock-in, забезпечуємо аудитний слід.",
         source: "Anthropic / Open",
         status: "standard",
       },
@@ -469,7 +469,7 @@ export const slide10 = {
       {
         id: "mcp",
         title: "MCP as interoperability standard",
-        body: "Model Context Protocol — open standard for connecting AI agents to systems. Avoids vendor lock-in, ensures audit trail.",
+        body: "Model Context Protocol - open standard for connecting AI agents to systems. Avoids vendor lock-in, ensures audit trail.",
         source: "Anthropic / Open",
         status: "standard",
       },
@@ -605,7 +605,7 @@ export const slide12 = {
     title: "Роман Новобранець",
     role: "Head of Delivery · AI Євангеліст",
     company: "Nova Post Europe",
-    bio: "10 років Nova Post: від оператора відділення до Head of Delivery. Запустив Baltic регіон з нуля — Литва, Латвія, Естонія. Будую AI-продукти, що вирішують реальні операційні проблеми.",
+    bio: "10 років Nova Post: від оператора відділення до Head of Delivery. Запустив Baltic регіон з нуля - Литва, Латвія, Естонія. Будую AI-продукти, що вирішують реальні операційні проблеми.",
     journey: [
       { year: "2014", event: "Оператор відділення Nova Post" },
       { year: "2018", event: "Head of Operations, Kyiv cluster" },
@@ -624,14 +624,14 @@ export const slide12 = {
     },
     linkedin: "linkedin.com/in/romannovobranets",
     linkedinLabel: "LinkedIn",
-    quote: "Логістика невидима, коли вона ідеальна. Мета — зробити її такою.",
+    quote: "Логістика невидима, коли вона ідеальна. Мета - зробити її такою.",
   },
   en: {
     eyebrow: "About me",
     title: "Roman Novobranets",
     role: "Head of Delivery · AI Evangelist",
     company: "Nova Post Europe",
-    bio: "10 years at Nova Post: from branch operator to Head of Delivery. Launched the Baltic region from scratch — Lithuania, Latvia, Estonia. Building AI products that solve real operational problems.",
+    bio: "10 years at Nova Post: from branch operator to Head of Delivery. Launched the Baltic region from scratch - Lithuania, Latvia, Estonia. Building AI products that solve real operational problems.",
     journey: [
       { year: "2014", event: "Branch operator, Nova Post" },
       { year: "2018", event: "Head of Operations, Kyiv cluster" },
@@ -669,17 +669,17 @@ export const slide3 = {
       {
         number: "02",
         title: "Перепроєктовують процеси",
-        body: "55% переможців vs 21% решти. AI без редизайну workflows — це косметика.",
+        body: "55% переможців vs 21% решти. AI без редизайну workflows - це косметика.",
       },
       {
         number: "03",
         title: "Лідерство залучене активно",
-        body: "AI не делегується IT-департаменту. Власник трансформації — топ-менеджмент.",
+        body: "AI не делегується IT-департаменту. Власник трансформації - топ-менеджмент.",
       },
     ],
     proof: {
       title: "Доказ з логістики: InPost",
-      body: "Алгоритм маршрутизації без редизайну процесів дав +12% ефективності. Той самий алгоритм після редизайну операційних процесів — +34%.",
+      body: "Алгоритм маршрутизації без редизайну процесів дав +12% ефективності. Той самий алгоритм після редизайну операційних процесів - +34%.",
       source: "InPost Annual Report 2025",
     },
   },
@@ -706,7 +706,7 @@ export const slide3 = {
     ],
     proof: {
       title: "Proof from logistics: InPost",
-      body: "Routing algorithm without process redesign delivered +12% efficiency. The same algorithm after operational process redesign — +34%.",
+      body: "Routing algorithm without process redesign delivered +12% efficiency. The same algorithm after operational process redesign - +34%.",
       source: "InPost Annual Report 2025",
     },
   },

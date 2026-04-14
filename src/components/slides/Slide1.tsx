@@ -26,7 +26,7 @@ export function Slide1() {
           <span className="flex-1 max-w-[120px] h-px bg-ink/20" />
         </div>
 
-        {/* Title — великий serif display */}
+        {/* Title - великий serif display */}
         <h1 className="font-display text-display-2xl text-ink mb-8 stagger-2">
           {s.title.split(" ").map((word, i, arr) => (
             <span key={i}>
@@ -41,7 +41,7 @@ export function Slide1() {
           {s.subtitle}
         </p>
 
-        {/* Big stat block — split layout */}
+        {/* Big stat block - split layout */}
         <div className="grid md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-end stagger-4">
           <div>
             <div className="font-display text-[10rem] md:text-[15rem] leading-[0.85] text-pop glow-pop number-reveal">

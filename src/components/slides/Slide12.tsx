@@ -17,7 +17,7 @@ export function Slide12() {
 
   return (
     <section id="slide-12" className="slide bg-ink text-paper noise-overlay relative">
-      {/* Decorative large blob — editorial portrait feel */}
+      {/* Decorative large blob - editorial portrait feel */}
       <div className="deco-blob absolute top-0 right-0 w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] rounded-full opacity-[0.06] blur-3xl bg-np-red" />
       <div className="deco-blob absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-[0.06] blur-3xl bg-electric" />
 
@@ -48,7 +48,7 @@ export function Slide12() {
               <span className="font-mono text-xs text-np-red uppercase tracking-widest">{s.company}</span>
             </div>
 
-            {/* Quote — editorial highlight */}
+            {/* Quote - editorial highlight */}
             <blockquote className="font-display text-xl md:text-2xl text-paper/80 leading-snug mb-8 pl-5 border-l-2 border-np-red stagger-2">
               {s.quote}
             </blockquote>
@@ -56,7 +56,7 @@ export function Slide12() {
             {/* Bio */}
             <p className="text-base text-paper/60 leading-relaxed font-light mb-10 stagger-3">{s.bio}</p>
 
-            {/* Journey timeline — horizontal */}
+            {/* Journey timeline - horizontal */}
             <div className="stagger-3">
               <div className="font-mono text-[10px] uppercase tracking-widest text-paper/30 mb-5">Timeline</div>
               <div className="space-y-3">

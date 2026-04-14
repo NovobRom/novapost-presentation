@@ -50,7 +50,7 @@ export function Slide10() {
         {/* Title */}
         <h2 className="font-display text-display-lg mb-4 max-w-4xl stagger-1">
           {lang === "ua" ? (
-            <>AI без <em className="serif-italic text-np-red">контролю</em> — ризик, не перевага</>
+            <>AI без <em className="serif-italic text-np-red">контролю</em> - ризик, не перевага</>
           ) : (
             <>AI without <em className="serif-italic text-np-red">control</em> is a risk, not an advantage</>
           )}

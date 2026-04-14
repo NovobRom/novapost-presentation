@@ -22,7 +22,7 @@ export function Slide8() {
         {/* Title */}
         <h2 className="font-display text-display-lg mb-4 max-w-4xl stagger-1">
           {lang === "ua" ? (
-            <>Технологія — 20%. <em className="serif-italic text-np-red">Люди — 80%.</em></>
+            <>Технологія: 20%. <em className="serif-italic text-np-red">Люди: 80%.</em></>
           ) : (
             <>Technology is 20%. <em className="serif-italic text-np-red">People are 80%.</em></>
           )}

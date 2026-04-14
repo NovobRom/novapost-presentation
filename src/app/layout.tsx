@@ -28,7 +28,7 @@ const geist = Geist({
 export const metadata: Metadata = {
   title: "Change Leadership · Nova Post · Roman Novobranets",
   description:
-    "AI Evangelist application — strategic vision for transforming Nova Post into the world's most innovative logistics player.",
+    "AI Evangelist application - strategic vision for transforming Nova Post into the world's most innovative logistics player.",
 };
 
 export default function RootLayout({
