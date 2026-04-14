@@ -84,14 +84,12 @@ export function Slide3() {
           {s.subtitle}
         </p>
 
-        {/* Three patterns - асиметричні картки */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        {/* Three patterns */}
+        <div className="grid md:grid-cols-3 gap-6 mb-16 items-start">
           {s.patterns.map((p, i) => (
             <div
               key={p.number}
-              className={`relative p-8 bg-paper-bright border border-border-soft rounded-2xl hover:border-np-red transition-all duration-300 group flex flex-col ${
-                i === 1 ? "md:translate-y-6" : ""
-              }`}
+              className="relative p-8 bg-paper-bright border border-border-soft rounded-2xl hover:border-np-red transition-all duration-300 group flex flex-col"
             >
               {/* Number badge */}
               <div className="absolute -top-4 left-6 px-3 py-1 bg-ink text-paper font-mono text-xs rounded-full">
