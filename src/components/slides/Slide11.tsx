@@ -7,6 +7,7 @@ const ACCENT_MAP = {
   pop: { text: "text-pop", bg: "bg-pop", border: "border-pop/30", dot: "bg-pop", light: "bg-pop/10" },
   electric: { text: "text-electric", bg: "bg-electric", border: "border-electric/30", dot: "bg-electric", light: "bg-electric/10" },
   "np-red": { text: "text-np-red", bg: "bg-np-red", border: "border-np-red/30", dot: "bg-np-red", light: "bg-np-red/10" },
+  ink: { text: "text-ink", bg: "bg-ink", border: "border-ink/30", dot: "bg-ink", light: "bg-ink/10" },
 } as const;
 
 export function Slide11() {

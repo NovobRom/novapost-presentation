@@ -17,24 +17,28 @@ const ACCENTS = {
     icon: "text-np-red bg-np-red/10",
     label: "text-np-red",
     num: "bg-np-red text-paper",
+    hoverText: "group-hover:text-np-red",
   },
   operator: {
     border: "hover:border-ink",
     icon: "text-ink bg-ink/10",
     label: "text-ink/60",
     num: "bg-ink text-paper",
+    hoverText: "group-hover:text-ink",
   },
   manager: {
     border: "hover:border-electric",
     icon: "text-electric bg-electric/10",
     label: "text-electric",
     num: "bg-electric text-paper",
+    hoverText: "group-hover:text-electric",
   },
   expansion: {
     border: "hover:border-pop",
     icon: "text-pop bg-pop/10",
     label: "text-pop",
     num: "bg-pop text-paper",
+    hoverText: "group-hover:text-pop",
   },
 } as const;
 
@@ -108,7 +112,7 @@ export function Slide4() {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-display text-2xl mb-3 leading-tight group-hover:text-np-red transition-colors duration-300">
+                <h3 className={`font-display text-2xl mb-3 leading-tight ${accent.hoverText} transition-colors duration-300`}>
                   {block.title}
                 </h3>
 
