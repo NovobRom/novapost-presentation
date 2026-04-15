@@ -337,7 +337,7 @@ export const slide8 = {
       { number: "03", title: "Впровадження зверху донизу", body: "Рішення без залучення виконавців - саботаж гарантований." },
     ],
     solutions: [
-      { number: "01", title: "AI звільняє час, не людей", body: "Перший меседж трансформації: автоматизується рутина, не ролі. Люди отримують час для складних завдань." },
+      { number: "01", title: "AI звільняє час, не людей", body: "Перший меседж трансформації: автоматизується рутина, не ролі. Люди отримують час на створення ідеального клієнтського досвіду." },
       { number: "02", title: "Прозорість метрик", body: "Кожен бачить, що AI робить і чому. Відкриті дашборди, зрозумілі KPI. Немає чорних ящиків." },
       { number: "03", title: "Pilot champions", body: "Перші 30 людей, які освоїли AI, стають амбасадорами. Peer-to-peer навчання ефективніше тренінгів." },
     ],
@@ -355,7 +355,7 @@ export const slide8 = {
       { number: "03", title: "Top-down implementation", body: "Decisions without frontline involvement guarantee sabotage." },
     ],
     solutions: [
-      { number: "01", title: "AI frees time, not people", body: "The first transformation message: routine gets automated, not roles. People get time for complex work." },
+      { number: "01", title: "AI frees time, not people", body: "The first transformation message: routine gets automated, not roles. People get time to create the ideal customer experience." },
       { number: "02", title: "Metrics transparency", body: "Everyone sees what AI does and why. Open dashboards, clear KPIs. No black boxes." },
       { number: "03", title: "Pilot champions", body: "The first 30 people who master AI become ambassadors. Peer-to-peer learning outperforms training sessions." },
     ],
@@ -585,6 +585,27 @@ export const slide11 = {
         accent: "ink",
       },
     ],
+    decisions: {
+      eyebrow: "Рішення на рівні борду",
+      title: "Що потрібно затвердити для старту",
+      items: [
+        {
+          number: "01",
+          title: "Стратегічний мандат на горизонт H1",
+          body: "Підтвердження що AI-трансформація це пріоритет компанії, не одна з ініціатив. Без цього перші No-Code пілоти не отримають уваги керівників підрозділів.",
+        },
+        {
+          number: "02",
+          title: "Бюджет на API і пілот AI-Copilot",
+          body: "Орієнтовно 15-25 тисяч євро на перший рік: API-провайдери (Anthropic, Google), хостинг, базова інтеграція для пілоту 10-15 операторів.",
+        },
+        {
+          number: "03",
+          title: "Мандат на фільтр найму AI First",
+          body: "HR-департамент додає обов'язкове питання при відкритті вакансії: чи може AI замінити цю функцію повністю або частково. Не блокує найм, але змінює сам спосіб дизайну ролей.",
+        },
+      ],
+    },
   },
   en: {
     eyebrow: "90 days",
@@ -637,6 +658,27 @@ export const slide11 = {
         accent: "ink",
       },
     ],
+    decisions: {
+      eyebrow: "Board-level decisions",
+      title: "What needs to be approved to start",
+      items: [
+        {
+          number: "01",
+          title: "Strategic mandate for horizon H1",
+          body: "Confirmation that AI transformation is a company priority, not one of many initiatives. Without this, the first No-Code pilots will not get attention from department heads.",
+        },
+        {
+          number: "02",
+          title: "Budget for API and AI-Copilot pilot",
+          body: "Approximately 15-25 thousand euros for the first year: API providers (Anthropic, Google), hosting, basic integration for a pilot of 10-15 operators.",
+        },
+        {
+          number: "03",
+          title: "Mandate for AI First hiring filter",
+          body: "HR department adds a mandatory question when opening any vacancy: can AI replace this function fully or partially. Does not block hiring, but changes how roles are designed.",
+        },
+      ],
+    },
   },
 };
 

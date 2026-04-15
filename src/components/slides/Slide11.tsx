@@ -48,7 +48,7 @@ export function Slide11() {
                 </div>
 
                 {/* Card */}
-                <div className={`flex-1 flex flex-col p-6 rounded-2xl border ${ac.border} bg-paper-bright`}>
+                <div className={`flex-1 flex flex-col p-5 rounded-2xl border ${ac.border} bg-paper-bright`}>
                   {/* Period */}
                   <div className={`font-mono text-[10px] uppercase tracking-widest mb-1 ${ac.text}`}>
                     {phase.period}
@@ -76,6 +76,36 @@ export function Slide11() {
               </div>
             );
           })}
+        </div>
+
+        {/* Decisions block — м'який Ask */}
+        <div className="mt-16 pt-10 border-t border-border-soft stagger-4">
+          <div className="mb-8 flex items-center gap-3">
+            <span className="w-12 h-px bg-ink/40" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink/60">
+              {s.decisions.eyebrow}
+            </span>
+          </div>
+
+          <h3 className="font-display text-2xl md:text-3xl mb-8 max-w-3xl leading-tight">
+            {s.decisions.title}
+          </h3>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            {s.decisions.items.map((item) => (
+              <div
+                key={item.number}
+                className="flex flex-col p-5 bg-paper-bright border border-border-soft rounded-2xl hover:border-ink/40 transition-colors duration-300"
+              >
+                <div className="flex items-baseline gap-3 mb-4">
+                  <span className="font-mono text-3xl font-light text-ink/30">{item.number}</span>
+                  <span className="w-2 h-2 rounded-full bg-np-red shrink-0" />
+                </div>
+                <h4 className="font-display text-lg leading-tight mb-3">{item.title}</h4>
+                <p className="text-sm text-ink-soft/70 leading-relaxed font-light flex-1">{item.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
