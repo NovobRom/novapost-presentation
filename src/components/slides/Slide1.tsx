@@ -2,7 +2,6 @@
 
 import { useLang } from "@/lib/lang-context";
 import { slide1, ui } from "@/content/slides";
-import { AnimatedNumber } from "@/components/AnimatedNumber";
 
 export function Slide1() {
   const { lang } = useLang();
@@ -45,7 +44,7 @@ export function Slide1() {
         <div className="grid md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-end stagger-4">
           <div>
             <div className="font-display text-[10rem] md:text-[15rem] leading-[0.85] text-pop glow-pop number-reveal">
-              <AnimatedNumber value={5} suffix="%" duration={2000} />
+              5%
             </div>
             <p className="text-base md:text-lg text-ink-soft max-w-md mt-4 font-medium leading-snug">
               {s.bigStatLabel}
