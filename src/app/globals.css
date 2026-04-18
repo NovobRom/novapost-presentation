@@ -20,7 +20,10 @@ html {
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Slide container */
+/* ================================================================
+   SLIDE CONTAINER — three height tiers
+   ================================================================ */
+
 .slide {
   min-height: 100vh;
   width: 100%;
@@ -28,7 +31,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(2rem, 5vh, 6rem) clamp(1rem, 4vw, 4rem);
+  padding: 4rem 1.5rem;
   position: relative;
   overflow: hidden;
   content-visibility: auto;
@@ -42,46 +45,119 @@ html {
   pointer-events: none;
 }
 
-/* Laptop screens (13-14"): tighter padding so content fits without inner scroll */
+/* --- TIER 1: Screens <=800px tall (laptops 13-14", 1366x768) --- */
 @media (max-height: 800px) {
-  .slide {
-    padding: clamp(1.5rem, 3vh, 3rem) clamp(1rem, 4vw, 3rem);
-  }
+  .slide { padding: 1.5rem 1.5rem; }
   .timeline-connector { display: none; }
-  /* Compress all large vertical margins — rem values don't scale with vh */
-  .slide .mb-20 { margin-bottom: 1rem; }
-  .slide .mb-16 { margin-bottom: 0.75rem; }
-  .slide .mb-14 { margin-bottom: 0.75rem; }
-  .slide .mb-12 { margin-bottom: 0.625rem; }
-  .slide .mb-10 { margin-bottom: 0.5rem; }
-  .slide .mt-6  { margin-top: 0.5rem; }
-  .slide .pt-10 { padding-top: 0.5rem; }
-  .slide .pt-5  { padding-top: 0.375rem; }
-  /* Compress inner card / panel padding */
-  .slide .p-12 { padding: 0.875rem; }
-  .slide .p-8  { padding: 0.875rem; }
-  .slide .p-7  { padding: 0.75rem; }
-  .slide .p-6  { padding: 0.625rem; }
-  /* Responsive Tailwind variants (md: prefix) — colon escaped in CSS selector */
-  .slide .md\:p-12 { padding: 0.875rem; }
-  /* Compress grid gaps */
-  .slide .gap-12     { gap: 0.75rem; }
-  .slide .gap-8      { gap: 0.625rem; }
-  .slide .md\:gap-12 { gap: 0.75rem; }
-  /* Remove forced min-height on cards — they can shrink on short screens */
-  .slide .min-h-\[240px\] { min-height: 0; }
-  /* Scale down all display headings */
+}
+
+/* --- TIER 2: Screens 801-1100px tall (1920x1080, 1440x900) --- */
+@media (min-height: 801px) and (max-height: 1100px) {
+  .slide { padding: 2.5rem 2.5rem; }
+}
+
+/* --- TIER 3: Screens >1100px tall (2560x1440, 4K) --- */
+@media (min-height: 1101px) {
+  .slide { padding: 6rem 4rem; }
+}
+
+/* Horizontal padding boost on wide screens */
+@media (min-width: 768px) {
+  .slide { padding-left: 3rem; padding-right: 3rem; }
+}
+@media (min-width: 1280px) and (min-height: 1101px) {
+  .slide { padding: 6rem 6rem; }
+}
+
+/* ================================================================
+   HEIGHT-RESPONSIVE SPACING OVERRIDES
+   Applied inside .slide to compress vertical rhythm on short screens
+   ================================================================ */
+
+/* Tier 1: aggressive compression for laptops */
+@media (max-height: 800px) {
+  .slide .mb-20 { margin-bottom: 0.75rem; }
+  .slide .mb-16 { margin-bottom: 0.625rem; }
+  .slide .mb-14 { margin-bottom: 0.5rem; }
+  .slide .mb-12 { margin-bottom: 0.5rem; }
+  .slide .mb-10 { margin-bottom: 0.375rem; }
+  .slide .mt-16 { margin-top: 0.5rem; }
+  .slide .mt-6  { margin-top: 0.375rem; }
+  .slide .pt-10 { padding-top: 0.375rem; }
+  .slide .pt-5  { padding-top: 0.25rem; }
+  .slide .p-12  { padding: 0.75rem; }
+  .slide .p-8   { padding: 0.75rem; }
+  .slide .p-7   { padding: 0.625rem; }
+  .slide .p-6   { padding: 0.5rem; }
+  .slide .p-5   { padding: 0.5rem; }
+  .slide .md\:p-12 { padding: 0.75rem; }
+  .slide .md\:p-8  { padding: 0.75rem; }
+  .slide .gap-12     { gap: 0.5rem; }
+  .slide .gap-8      { gap: 0.5rem; }
+  .slide .gap-6      { gap: 0.375rem; }
+  .slide .gap-5      { gap: 0.375rem; }
+  .slide .md\:gap-16 { gap: 0.5rem; }
+  .slide .md\:gap-12 { gap: 0.5rem; }
+  .slide .space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.375rem; }
+  .slide .space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.25rem; }
+  .slide .space-y-2\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.25rem; }
   .slide h1, .slide h2 {
-    font-size: clamp(1.75rem, min(4.5vw, 8vh), 3.5rem) !important;
+    font-size: clamp(1.5rem, min(4vw, 6vh), 2.5rem) !important;
+  }
+  .slide h3 {
+    font-size: clamp(0.9rem, min(2vw, 3vh), 1.25rem) !important;
   }
 }
 
-/* Large screens with generous height: full editorial spacing */
-@media (min-width: 1280px) and (min-height: 900px) {
-  .slide {
-    padding: 6rem 6rem;
-  }
+/* Tier 2: moderate compression for 1080p */
+@media (min-height: 801px) and (max-height: 1100px) {
+  .slide .mb-20 { margin-bottom: 2rem; }
+  .slide .mb-16 { margin-bottom: 1.5rem; }
+  .slide .mb-14 { margin-bottom: 1.25rem; }
+  .slide .mb-12 { margin-bottom: 1rem; }
+  .slide .mb-10 { margin-bottom: 0.75rem; }
+  .slide .mt-16 { margin-top: 1.5rem; }
+  .slide .pt-10 { padding-top: 1rem; }
+  .slide .p-12  { padding: 1.5rem; }
+  .slide .p-8   { padding: 1.25rem; }
+  .slide .md\:p-12 { padding: 1.5rem; }
+  .slide .md\:p-8  { padding: 1.25rem; }
+  .slide .gap-12     { gap: 1.5rem; }
+  .slide .md\:gap-16 { gap: 1.5rem; }
+  .slide .md\:gap-12 { gap: 1.5rem; }
 }
+
+/* ================================================================
+   HEIGHT-AWARE TYPOGRAPHY
+   ================================================================ */
+
+/* Hero numbers (Slide2: 88% / 5%) */
+.hero-number {
+  font-size: clamp(4rem, min(15vw, 14vh), 12rem);
+  line-height: 0.9;
+}
+@media (max-height: 800px) {
+  .hero-number { font-size: clamp(2.5rem, min(12vw, 8vh), 5rem); }
+}
+@media (min-height: 801px) and (max-height: 1100px) {
+  .hero-number { font-size: clamp(3.5rem, min(12vw, 10vh), 8rem); }
+}
+
+/* Horizon H-labels (Slide5: H1 / H2 / H3) */
+.horizon-label {
+  font-size: clamp(2rem, min(5vw, 8vh), 6rem);
+  line-height: 1;
+}
+@media (max-height: 800px) {
+  .horizon-label { font-size: clamp(1.5rem, min(4vw, 5vh), 2.5rem); }
+}
+@media (min-height: 801px) and (max-height: 1100px) {
+  .horizon-label { font-size: clamp(2rem, min(4vw, 7vh), 4rem); }
+}
+
+/* ================================================================
+   SLIDES CONTAINER
+   ================================================================ */
 
 .slides-container {
   scroll-snap-type: y proximity;
@@ -89,14 +165,16 @@ html {
   height: 100vh;
 }
 
-/* Editorial italic flourish for serif display */
+/* ================================================================
+   EDITORIAL STYLES
+   ================================================================ */
+
 .serif-italic {
   font-family: var(--font-instrument), Georgia, serif;
   font-style: italic;
   font-weight: 400;
 }
 
-/* Animated gradient mesh - для титульного слайду */
 .gradient-mesh {
   background: linear-gradient(
     115deg,
@@ -115,7 +193,6 @@ html {
   50% { background-position: 100% 50%; }
 }
 
-/* Noise overlay - для editorial відчуття */
 .noise-overlay::after {
   content: "";
   position: absolute;
@@ -126,13 +203,11 @@ html {
   pointer-events: none;
 }
 
-/* Subtle dot grid background */
 .dot-grid {
   background-image: radial-gradient(circle at 1px 1px, rgba(10, 10, 10, 0.08) 1px, transparent 0);
   background-size: 24px 24px;
 }
 
-/* Diagonal stripes - для accent areas */
 .diagonal-stripes {
   background-image: repeating-linear-gradient(
     45deg,
@@ -143,7 +218,6 @@ html {
   );
 }
 
-/* Glow text effect для критичних чисел */
 .glow-pop {
   text-shadow: 0 0 60px rgba(255, 51, 102, 0.4);
 }
@@ -152,7 +226,6 @@ html {
   text-shadow: 0 0 60px rgba(237, 28, 36, 0.4);
 }
 
-/* Number ticker - для анімованих чисел */
 @keyframes count-fade-in {
   0% { opacity: 0; transform: translateY(40px) scale(0.95); }
   100% { opacity: 1; transform: translateY(0) scale(1); }
@@ -162,7 +235,6 @@ html {
   animation: count-fade-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Stagger reveals */
 @keyframes stagger-up {
   0% { opacity: 0; transform: translateY(24px); }
   100% { opacity: 1; transform: translateY(0); }
@@ -174,19 +246,7 @@ html {
 .stagger-4 { animation: stagger-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards; opacity: 0; }
 .stagger-5 { animation: stagger-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards; opacity: 0; }
 
-/* Height-aware hero numbers (Slide2: 88% / 5% contrast block) */
-.hero-number {
-  font-size: clamp(5rem, min(15vw, 12vh), 12rem);
-  line-height: 1;
-}
-
-/* Height-aware horizon H-labels (Slide5: H1 / H2 / H3) */
-.horizon-label {
-  font-size: clamp(2.5rem, min(5vw, 9vh), 6rem);
-  line-height: 1;
-}
-
-/* Print styles - for PDF export */
+/* Print styles */
 @media print {
   .slides-container {
     overflow: visible !important;
