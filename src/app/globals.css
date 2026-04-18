@@ -28,8 +28,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* Adaptive padding: responds to both width and viewport height */
-  padding: clamp(2rem, 5vh, 5rem) clamp(1rem, 4vw, 3rem);
+  padding: clamp(2rem, 5vh, 6rem) clamp(1rem, 4vw, 4rem);
   position: relative;
   overflow: hidden;
   content-visibility: auto;
@@ -46,8 +45,9 @@ html {
 /* Laptop screens (13-14"): tighter padding so content fits without inner scroll */
 @media (max-height: 800px) {
   .slide {
-    padding: clamp(1rem, 2.5vh, 2.5rem) clamp(1rem, 4vw, 3rem);
+    padding: clamp(1.5rem, 3vh, 3rem) clamp(1rem, 4vw, 3rem);
   }
+  .timeline-connector { display: none; }
   /* Compress all large vertical margins — rem values don't scale with vh */
   .slide .mb-20 { margin-bottom: 1rem; }
   .slide .mb-16 { margin-bottom: 0.75rem; }
@@ -176,7 +176,7 @@ html {
 
 /* Height-aware hero numbers (Slide2: 88% / 5% contrast block) */
 .hero-number {
-  font-size: clamp(3rem, min(8vw, 15vh), 10rem);
+  font-size: clamp(5rem, min(15vw, 12vh), 12rem);
   line-height: 1;
 }
 

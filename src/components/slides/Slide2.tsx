@@ -23,7 +23,7 @@ export function Slide2() {
         </div>
 
         {/* Title */}
-        <h2 className="font-display text-display-xl mb-20 max-w-5xl">
+        <h2 className="font-display text-display-xl mb-10 lg:mb-20 max-w-5xl">
           {s.titleParts.line1}{" "}
           <em className="serif-italic text-paper/70">{s.titleParts.line1Italic}</em>
           <br />
@@ -32,9 +32,9 @@ export function Slide2() {
         </h2>
 
         {/* Hero contrast - 88% vs 5%, split-screen */}
-        <div className="grid md:grid-cols-2 gap-1 mb-16 border border-paper/15 rounded-xl overflow-hidden">
+        <div className="grid md:grid-cols-2 gap-1 mb-8 lg:mb-16 border border-paper/15 rounded-xl overflow-hidden">
           {/* Left: 88% - dimmed */}
-          <div className="p-8 md:p-12 bg-paper/5 relative diagonal-stripes">
+          <div className="p-6 md:p-8 xl:p-12 bg-paper/5 relative diagonal-stripes">
             <div className="font-mono text-[10px] uppercase tracking-widest text-paper/40 mb-4">
               {s.columnLabels.left}
             </div>
@@ -47,7 +47,7 @@ export function Slide2() {
           </div>
 
           {/* Right: 5% - bright pop */}
-          <div className="p-8 md:p-12 bg-pop/10 relative">
+          <div className="p-6 md:p-8 xl:p-12 bg-pop/10 relative">
             <div className="font-mono text-[10px] uppercase tracking-widest text-pop mb-4">
               {s.columnLabels.right}
             </div>
@@ -61,7 +61,7 @@ export function Slide2() {
         </div>
 
         {/* Two supporting stats */}
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
+        <div className="grid md:grid-cols-2 gap-12 mb-8 lg:mb-16">
           <div className="border-l-2 border-paper/30 pl-6">
             <div className="font-display text-5xl md:text-6xl text-paper/90 mb-2">
               <AnimatedNumber value={88} suffix="%" duration={1600} />

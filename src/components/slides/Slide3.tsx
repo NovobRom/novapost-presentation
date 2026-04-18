@@ -80,16 +80,16 @@ export function Slide3() {
           {s.titleParts.plain}{" "}
           <em className="serif-italic text-np-red">{s.titleParts.italic}</em>
         </h2>
-        <p className="text-base md:text-lg text-muted max-w-2xl mb-16 font-light">
+        <p className="text-base md:text-lg text-muted max-w-2xl mb-8 lg:mb-16 font-light">
           {s.subtitle}
         </p>
 
         {/* Three patterns */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16 items-start">
+        <div className="grid md:grid-cols-3 gap-6 mb-8 lg:mb-16 items-start">
           {s.patterns.map((p, i) => (
             <div
               key={p.number}
-              className="relative p-8 bg-paper-bright border border-border-soft rounded-2xl hover:border-np-red transition-all duration-300 group flex flex-col"
+              className="relative p-6 lg:p-8 bg-paper-bright border border-border-soft rounded-2xl hover:border-np-red transition-all duration-300 group flex flex-col"
             >
               {/* Number badge */}
               <div className="absolute -top-4 left-6 px-3 py-1 bg-ink text-paper font-mono text-xs rounded-full">
@@ -107,7 +107,7 @@ export function Slide3() {
         </div>
 
         {/* Proof block - InPost з bar chart */}
-        <div className="bg-ink text-paper rounded-2xl p-8 md:p-12 grid md:grid-cols-[1.5fr_1fr] gap-8 md:gap-12 items-center relative overflow-hidden">
+        <div className="bg-ink text-paper rounded-2xl p-6 md:p-8 xl:p-12 grid md:grid-cols-[1.5fr_1fr] gap-8 md:gap-12 items-center relative overflow-hidden">
           {/* Decorative gradient corner */}
           <div className="deco-blob absolute -top-20 -right-20 w-[300px] h-[300px] rounded-full opacity-15 blur-2xl bg-pop" />
 
@@ -118,7 +118,7 @@ export function Slide3() {
                 {s.proof.title}
               </span>
             </div>
-            <p className="font-display text-2xl md:text-3xl leading-snug">
+            <p className="font-display text-xl md:text-2xl xl:text-3xl leading-snug">
               {s.proof.body}
             </p>
             <p className="text-[10px] text-paper/50 mt-4 font-mono uppercase tracking-wider">

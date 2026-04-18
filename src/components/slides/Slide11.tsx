@@ -20,7 +20,7 @@ export function Slide11() {
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Eyebrow */}
-        <div className="mb-12 flex items-center gap-3 stagger-1">
+        <div className="mb-6 lg:mb-12 flex items-center gap-3 stagger-1">
           <span className="w-12 h-px bg-np-red" />
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted">{s.eyebrow}</span>
         </div>
@@ -31,7 +31,7 @@ export function Slide11() {
           <em className="serif-italic text-np-red">{s.titleParts.italic}</em>
           {s.titleParts.after && ` ${s.titleParts.after}`}
         </h2>
-        <p className="text-base md:text-lg text-muted max-w-2xl mb-14 font-light stagger-2">{s.subtitle}</p>
+        <p className="text-base md:text-lg text-muted max-w-2xl mb-8 lg:mb-14 font-light stagger-2">{s.subtitle}</p>
 
         {/* Timeline phases */}
         <div className="grid md:grid-cols-4 gap-5 stagger-3">
@@ -40,7 +40,7 @@ export function Slide11() {
             return (
               <div key={i} className="flex flex-col">
                 {/* Timeline connector (desktop) */}
-                <div className="hidden md:flex items-center mb-6 gap-0">
+                <div className="hidden md:flex items-center mb-6 gap-0 timeline-connector">
                   <div className={`w-4 h-4 rounded-full shrink-0 ${ac.dot}`} />
                   {i < s.phases.length - 1 && (
                     <div className="flex-1 h-px bg-border-soft" />
@@ -48,7 +48,7 @@ export function Slide11() {
                 </div>
 
                 {/* Card */}
-                <div className={`flex-1 flex flex-col p-5 rounded-2xl border ${ac.border} bg-paper-bright`}>
+                <div className={`flex-1 flex flex-col p-4 lg:p-5 rounded-2xl border ${ac.border} bg-paper-bright`}>
                   {/* Period */}
                   <div className={`font-mono text-[10px] uppercase tracking-widest mb-1 ${ac.text}`}>
                     {phase.period}
@@ -57,9 +57,9 @@ export function Slide11() {
                   <h3 className="font-display text-xl mb-5 leading-tight">{phase.label}</h3>
 
                   {/* Items */}
-                  <ul className="space-y-2.5 mb-5 flex-1">
+                  <ul className="space-y-1.5 lg:space-y-2.5 mb-5 flex-1">
                     {phase.items.map((item, j) => (
-                      <li key={j} className="flex gap-2.5 text-sm text-ink-soft/70 font-light leading-snug">
+                      <li key={j} className="flex gap-2.5 text-xs lg:text-sm text-ink-soft/70 font-light leading-snug">
                         <span className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${ac.dot}`} />
                         {item}
                       </li>
@@ -79,15 +79,15 @@ export function Slide11() {
         </div>
 
         {/* Decisions block — м'який Ask */}
-        <div className="mt-16 pt-10 border-t border-border-soft stagger-4">
-          <div className="mb-8 flex items-center gap-3">
+        <div className="mt-8 lg:mt-16 pt-6 lg:pt-10 border-t border-border-soft stagger-4">
+          <div className="mb-4 lg:mb-8 flex items-center gap-3">
             <span className="w-12 h-px bg-ink/40" />
             <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink/60">
               {s.decisions.eyebrow}
             </span>
           </div>
 
-          <h3 className="font-display text-2xl md:text-3xl mb-8 max-w-3xl leading-tight">
+          <h3 className="font-display text-xl md:text-2xl mb-4 lg:mb-8 max-w-3xl leading-tight">
             {s.decisions.title}
           </h3>
 
@@ -95,7 +95,7 @@ export function Slide11() {
             {s.decisions.items.map((item) => (
               <div
                 key={item.number}
-                className="flex flex-col p-5 bg-paper-bright border border-border-soft rounded-2xl hover:border-ink/40 transition-colors duration-300"
+                className="flex flex-col p-4 lg:p-5 bg-paper-bright border border-border-soft rounded-2xl hover:border-ink/40 transition-colors duration-300"
               >
                 <div className="flex items-baseline gap-3 mb-4">
                   <span className="font-mono text-3xl font-light text-ink/30">{item.number}</span>

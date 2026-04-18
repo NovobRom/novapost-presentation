@@ -57,7 +57,7 @@ export function Slide4() {
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Eyebrow */}
-        <div className="mb-12 flex items-center gap-3 stagger-1">
+        <div className="mb-6 lg:mb-12 flex items-center gap-3 stagger-1">
           <span className="w-12 h-px bg-np-red" />
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted">
             {s.eyebrow}
@@ -69,19 +69,19 @@ export function Slide4() {
           {s.titleParts.plain}{" "}
           <em className="serif-italic text-np-red">{s.titleParts.italic}</em>
         </h2>
-        <p className="text-base md:text-lg text-muted max-w-2xl mb-14 font-light stagger-2">
+        <p className="text-base md:text-lg text-muted max-w-2xl mb-8 lg:mb-14 font-light stagger-2">
           {s.subtitle}
         </p>
 
         {/* 2×2 grid */}
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 gap-4 lg:gap-5">
           {s.blocks.map((block, i) => {
             const accent = ACCENTS[block.id as keyof typeof ACCENTS];
             const Icon = ICONS[block.id as keyof typeof ICONS];
             return (
               <div
                 key={block.id}
-                className={`group relative p-8 bg-paper-bright border border-border-soft rounded-2xl transition-all duration-300 ${accent.border} ${STAGGER[i]}`}
+                className={`group relative p-5 lg:p-8 bg-paper-bright border border-border-soft rounded-2xl transition-all duration-300 ${accent.border} ${STAGGER[i]}`}
               >
                 {/* Corner number */}
                 <span
