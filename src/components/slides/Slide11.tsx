@@ -96,7 +96,7 @@ export function Slide11() {
                 <span className="font-mono text-lg font-light text-np-red/40 shrink-0 leading-none mt-0.5">{item.number}</span>
                 <div className="min-w-0">
                   <h4 className="font-display text-sm leading-tight mb-1">{item.title}</h4>
-                  <p className="text-[11px] text-ink-soft/60 leading-snug font-light line-clamp-2">{item.body}</p>
+                  <p className="text-[11px] text-ink-soft/60 leading-snug font-light">{item.body}</p>
                 </div>
               </div>
             ))}
