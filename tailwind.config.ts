@@ -32,10 +32,10 @@ const config: Config = {
         mono: ["var(--font-jetbrains)", "monospace"],
       },
       fontSize: {
-        "display-2xl": ["clamp(4rem, min(12vw, 18vh), 9rem)", { lineHeight: "0.9", letterSpacing: "-0.04em" }],
-        "display-xl": ["clamp(3rem, min(9vw, 14vh), 7rem)", { lineHeight: "0.95", letterSpacing: "-0.035em" }],
-        "display-lg": ["clamp(2rem, min(6vw, 10vh), 5rem)", { lineHeight: "1", letterSpacing: "-0.03em" }],
-        "display-md": ["clamp(1.5rem, min(3.5vw, 6vh), 2.75rem)", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        "display-2xl": ["clamp(3rem, min(12vw, 16vh), 9rem)", { lineHeight: "0.9", letterSpacing: "-0.04em" }],
+        "display-xl": ["clamp(2.5rem, min(9vw, 12vh), 7rem)", { lineHeight: "0.95", letterSpacing: "-0.035em" }],
+        "display-lg": ["clamp(2rem, min(6vw, 8vh), 5rem)", { lineHeight: "1", letterSpacing: "-0.03em" }],
+        "display-md": ["clamp(1.5rem, min(3.5vw, 5vh), 2.75rem)", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
       },
       backgroundImage: {
         "noise": "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E\")",
